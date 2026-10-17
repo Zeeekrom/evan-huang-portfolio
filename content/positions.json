@@ -1,0 +1,64 @@
+[
+  {
+    "id": "autonomy-and-accountability",
+    "label": "More autonomy, more accountability",
+    "claim": "The more autonomy an agent has, the more identity, permissions, data boundaries, approvals, monitoring, traceability and human accountability matter.",
+    "origin": "practice",
+    "source": "NPC-AI-040",
+    "evidence": [
+      "payment-agent-lab"
+    ]
+  },
+  {
+    "id": "agent-is-what-it-can-reach",
+    "label": "An agent is what it can reach",
+    "claim": "An agent's real role is not the job title written in its prompt, but the commands, files, shell, package managers, services and data it can actually reach.",
+    "origin": "learned",
+    "source": "NPC-SEC-002",
+    "evidence": [
+      "payment-agent-lab"
+    ]
+  },
+  {
+    "id": "short-loops",
+    "label": "Short loops, a person in the loop",
+    "claim": "Rather than handing an agent a task overnight, I prefer small task blocks, frequent review and continuous correction, so a person keeps hold of the context and the quality.",
+    "origin": "learned",
+    "source": "NPC-AI-005",
+    "evidence": [
+      "payment-agent-lab",
+      "work-qingqiu-technology-co-ltd-work-1"
+    ]
+  },
+  {
+    "id": "human-judgement-sets-value",
+    "label": "Human judgement sets the value",
+    "claim": "AI should extend professional knowledge, not replace creative judgement: human taste, brand, mechanics and distinctive input decide what the output is worth.",
+    "origin": "practice",
+    "source": "NPC-AI-009",
+    "evidence": [
+      "work-perfect-world-co-ltd-work-1",
+      "work-lilith-games-work-1"
+    ]
+  },
+  {
+    "id": "people-who-bridge",
+    "label": "AI needs people who bridge",
+    "claim": "Putting AI to work needs hybrid roles that understand the business, dig out the real need, shape the specification and work alongside the people building it.",
+    "origin": "practice",
+    "source": "NPC-AI-016",
+    "evidence": [
+      "be-hers"
+    ]
+  },
+  {
+    "id": "model-is-not-a-workflow",
+    "label": "A model is not a workflow",
+    "claim": "The gap that matters is between a model that can answer a question and a workflow that can safely use real data, permissions and human review.",
+    "origin": "learned",
+    "source": "ICT award nomination statement, 24 Sep 2026",
+    "evidence": [
+      "payment-agent-lab"
+    ]
+  }
+]

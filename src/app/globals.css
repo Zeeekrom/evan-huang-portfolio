@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+:root {
+  --background: #05070d;
+  --background-elevated: #0b0f1a;
+  --surface: #0f1524;
+  --surface-hover: #141b2e;
+  --border: #1e2740;
+  --foreground: #e7ebf5;
+  --muted: #8b95ac;
+  --accent-teal: #1fb8ab;
+  --accent-violet: #8b7bff;
+  --accent-blue: #4fb2ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent-teal: var(--accent-teal);
+  --color-accent-violet: var(--accent-violet);
+  --color-accent-blue: var(--accent-blue);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--accent-teal);
+  color: #05070d;
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, var(--accent-teal), var(--accent-blue) 55%, var(--accent-violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent-teal);
+  text-shadow: 0 0 24px rgba(31, 184, 171, 0.45), 0 0 60px rgba(139, 123, 255, 0.25);
+}
+
+.section-heading {
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--accent-teal);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(31, 184, 171, 0.45);
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+}
+
+.chip {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--background-elevated);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.08); }
+  66% { transform: translate(-20px, 20px) scale(0.94); }
+}
+
+.animate-blob {
+  animation: blob 18s ease-in-out infinite;
+}
+
+/*
+ * Canvas / semantic-deck handoff.
+ *
+ * Three states, driven by data-canvas on the root element:
+ *
+ *   (absent)  no JavaScript, or the canvas failed. The deck is the page.
+ *   "on"      a boot script has confirmed JS is running. The deck is hidden
+ *             before first paint and the loader covers the build.
+ *   "ready"   the canvas is live. The loader fades out over it.
+ *
+ * The deck is never removed from the DOM — crawlers, screen readers and no-JS
+ * visitors read exactly the markup in the exported HTML.
+ */
+[data-canvas] [data-deck] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  pointer-events: none;
+}
+
+/*
+ * Loader. Hidden by default so that with JavaScript off it can never trap the
+ * page behind a screen that will not go away. Its background matches the world
+ * surface, so the handoff to the canvas is a fade with nothing underneath it
+ * changing colour.
+ */
+#explore-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-content: center;
+  gap: 1.25rem;
+  visibility: hidden;
+  opacity: 0;
+  background: var(--canvas-surface, #3a3a3a);
+  color: var(--ui-text, #fff);
+}
+
+[data-canvas="on"] #explore-loader {
+  visibility: visible;
+  opacity: 1;
+}
+
+[data-canvas="ready"] #explore-loader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.45s ease,
+    visibility 0s linear 0.45s;
+}
+
+#explore-loader .loader-name {
+  font-size: 0.8125rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.75;
+}
+
+#explore-loader .loader-track {
+  width: min(15rem, 60vw);
+  height: 1px;
+  background: currentColor;
+  opacity: 0.25;
+}
+
+#explore-loader .loader-fill {
+  height: 100%;
+  width: 0%;
+  background: currentColor;
+  opacity: 1;
+  transition: width 0.18s linear;
+}
+
+#explore-loader .loader-count {
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-align: center;
+  opacity: 0.45;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-canvas="ready"] #explore-loader {
+    transition: none;
+  }
+  #explore-loader .loader-fill {
+    transition: none;
+  }
+}
+
+/*
+ * Canvas UI tokens (spec §6).
+ *
+ * The toolbar is DOM while the world is WebGL, so the two palettes have to be
+ * declared twice. These names mirror the reference implementation's so the
+ * mapping stays obvious; the values track our own surface/card decision:
+ * a grey table under near-black cards in dark, a white table under grey cards
+ * in light.
+ */
+[data-theme="dark"] {
+  --canvas-surface: #3a3a3a;
+  --ui-bg: #1e1e1ef2;
+  --ui-text: #ffffff;
+  --ui-text-muted: #a3a3a3;
+  --ui-bg-hover: #333333;
+  --ui-bg-active: #414141;
+  --ui-border: #4a4a4a;
+  --ui-selected: #ffffff1f;
+  --ui-shadow: 0 10px 40px #00000080;
+}
+
+[data-theme="light"] {
+  --canvas-surface: #ffffff;
+  --ui-bg: #ffffffe6;
+  --ui-text: #1f2937;
+  --ui-text-muted: #6b7280;
+  --ui-bg-hover: #f3f4f6;
+  --ui-bg-active: #e5e7eb;
+  --ui-border: #d1d5db;
+  --ui-selected: #00000014;
+  --ui-shadow: 0 10px 40px #0000001f;
+}
+
+/*
+ * Level meter for the voice guide (spec §2.4). Each bar is given its own
+ * period in the component, so the meter reads as a voice rather than a
+ * metronome.
+ */
+@keyframes voiceBar {
+  0% {
+    transform: scaleY(0.3);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}

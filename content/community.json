@@ -1,0 +1,164 @@
+[
+  {
+    "id": "darling-downs-environment-council",
+    "org": "Darling Downs Environment Council",
+    "role": "AI-Enabled Web Application Developer",
+    "period": "2026 – Present",
+    "status": "current",
+    "field": "Environment",
+    "location": "Queensland (remote)",
+    "bullets": [
+      "Selected to develop an open-source, AI-enabled doorknocking web application for environmental advocacy, supporting community engagement tracking, data collection and reporting, lightweight AI workflows, and collaboration with non-technical campaign volunteers."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "ict-peer-support",
+    "org": "UTAS School of ICT",
+    "role": "Peer learning support",
+    "period": "2026 – Present",
+    "status": "current",
+    "field": "Education",
+    "location": "Hobart, TAS",
+    "bullets": [
+      "Ongoing one-to-one support for a fellow ICT student from a non-IT background across two units: explaining concepts, breaking assignment requirements into steps, and guiding problem-solving rather than handing over answers."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "tas-ict-community",
+    "org": "Tasmanian ICT and AI community",
+    "role": "Regular participant",
+    "period": "2026 – Present",
+    "status": "current",
+    "field": "Science and technology",
+    "location": "Hobart, TAS",
+    "bullets": [
+      "Nine local ICT and professional activities in one semester: the TasICT-AISA Cyber Conference, two Tasmanian AI Collective sessions, Enterprize AI CoLab, PMI Tasmania, a UTAS ICT industry visit, SecTalks Hobart, an AISA Tasmania branch event as an invited guest, and the School of ICT student expo.",
+      "Keeps structured notes after each event and follows up on them: a question to the AISA Tasmania branch after SecTalks is what led to the guest invitation."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "inspired-mind-lab",
+    "org": "Inspired Mind Lab",
+    "role": "STEAMM Workshop Volunteer",
+    "period": "2026 – Present",
+    "status": "current",
+    "field": "Education",
+    "location": "Rokeby, TAS",
+    "bullets": [
+      "Supported a hands-on STEAMM robotics workshop for children aged 6 to 12: preparing and testing the robots and tablets before each session, then helping groups through the activities."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "utas-motorsport",
+    "org": "UTAS Motorsport",
+    "role": "LiDAR & Autonomous Systems Contributor",
+    "period": "Jul 2026 – Present",
+    "status": "current",
+    "field": "Science and technology",
+    "location": "Hobart, TAS",
+    "bullets": [
+      "A multidisciplinary student engineering team, testing autonomous-vehicle perception and simulation workflows in Python, ROS 2, CARLA, RViz and LiDAR."
+    ],
+    "evidence": [
+      "motorsport"
+    ]
+  },
+  {
+    "id": "be-hers",
+    "org": "Be Hers Ltd",
+    "role": "Web Developer",
+    "period": "2026 – Present",
+    "status": "current",
+    "field": "Community organisation",
+    "location": "Hobart, TAS",
+    "bullets": [
+      "Rebuilding the organisation's website around updated business and community needs, restructuring outdated features and developing an administrator framework with AI-agent integration for content management and future digital services."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "libraries-tasmania",
+    "org": "Libraries Tasmania — Glenorchy Library",
+    "role": "Digital Mentor",
+    "period": "Aug 2026 – Present",
+    "status": "current",
+    "field": "Education",
+    "location": "Glenorchy, TAS",
+    "bullets": [
+      "Provide one-to-one digital inclusion support, guiding community members through everyday technology tasks, adapting explanations to individual needs, and helping users build confidence and independence with digital services."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "fobi-2026",
+    "org": "Festival of Bright Ideas 2026",
+    "role": "VR Volunteer",
+    "period": "Aug 2026",
+    "status": "completed",
+    "field": "Education",
+    "location": "Hobart, TAS",
+    "bullets": [
+      "Supported Healthy Shack Tech's VR and 3D digital twin exhibit, assisting visitors with VR experiences, Matterport 3D models and interactive digital spaces.",
+      "Technology is not only about whether we can build something. It also matters whether people can understand it, interact with it, and enjoy experiencing it."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "raise-foundation",
+    "org": "Raise Foundation",
+    "role": "Volunteer Youth Mentor",
+    "period": "Starting Apr 2027",
+    "status": "incoming",
+    "field": "Education",
+    "location": "Hobart High School, TAS",
+    "bullets": [
+      "Selected and trained for Raise's in-school mentoring program; completed mentor training in October 2026, covering youth safety and reporting, what young people need from a mentor, and practice sessions. Structured one-to-one mentoring begins in 2027."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "hospitals-south",
+    "org": "Tasmanian Health Service — Hospitals South",
+    "role": "Consumer Representative (Register)",
+    "period": "Aug 2026 – Present",
+    "status": "onboarding",
+    "field": "Health",
+    "location": "Hobart, TAS",
+    "bullets": [
+      "Selected for the Hospitals South Consumer Representative Register, with opportunities to contribute to service planning, quality improvement, document and policy review, and committees or panels.",
+      "Met the consumer engagement team in September 2026 to talk through the register, patient navigation and health literacy."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "tianyun-community",
+    "org": "Tianyun Community Committee",
+    "role": "Community Volunteer",
+    "period": "Jul 2025 – Oct 2025",
+    "status": "completed",
+    "field": "Community services",
+    "location": "China",
+    "bullets": [
+      "175 hours of recurring community service: information registration, resident enquiries, public-material distribution and service-area organisation.",
+      "Coordinated event preparation and routine support for residents and visitors."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "tech-events",
+    "org": "World Artificial Intelligence Conference · Huawei Connect",
+    "role": "Public Technology Event Volunteer",
+    "period": "Jul 2023 – Sep 2024",
+    "status": "completed",
+    "field": "Science and technology",
+    "location": "China",
+    "bullets": [
+      "Guided visitors and supported venue operations at two major technology conferences, handling enquiries, exhibition navigation and high-traffic attendee flow."
+    ],
+    "evidence": []
+  }
+]

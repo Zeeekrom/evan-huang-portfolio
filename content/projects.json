@@ -1,0 +1,143 @@
+[
+  {
+    "slug": "motorsport",
+    "title": "UTAS Motorsport — LiDAR Autonomy",
+    "period": "Jul 2026 – Present",
+    "featured": true,
+    "link": "https://github.com/Zeeekrom/MotorSport",
+    "description": "End-to-end autonomous-vehicle software prototype for UTAS Motorsport's driverless program.",
+    "bullets": [
+      "Built a full pipeline in CARLA, ROS 2 and RViz: virtual 40-channel LiDAR, DBSCAN cone detection, multi-frame tracking, KISS-ICP localisation, centre-path generation and path following.",
+      "Validated with multi-lap, multi-track, sensor-fault and dynamic-obstacle tests — 8/8 scenarios and 24/24 laps passed in the final software matrix.",
+      "Built the official Hesai ROS 2 driver for upcoming Pandar40P hardware testing."
+    ],
+    "tags": [
+      "Python",
+      "ROS 2",
+      "CARLA",
+      "RViz",
+      "LiDAR",
+      "DBSCAN",
+      "KISS-ICP"
+    ]
+  },
+  {
+    "slug": "payment-agent-lab",
+    "title": "AI-Native Payment & Agent Engineering Lab",
+    "period": "2026",
+    "description": "A payment-processing prototype and a read-only operations copilot, built to find where agent workflows break rather than to demo where they work.",
+    "bullets": [
+      "Designed a FastAPI/SQLite payment-processing prototype normalising synchronous, webhook and polling results from three simulated channels through adapters, event de-duplication, audit logging and a deterministic state machine.",
+      "Verified a read-only RAG operations copilot with three tools and a Planner–Developer–Tester–Reviewer process, using 77 automated tests, 11 documented failure cases, human approval and code-level safety gates."
+    ],
+    "tags": [
+      "FastAPI",
+      "SQLite",
+      "Python",
+      "RAG",
+      "pytest",
+      "Agent workflows"
+    ]
+  },
+  {
+    "slug": "bili-cache-watch",
+    "title": "Bili Cache Watch",
+    "period": "Feb 2026 – Apr 2026",
+    "featured": true,
+    "link": "https://github.com/Zeeekrom/bili-cache-watch",
+    "description": "Local full-stack web app for managing cached Bilibili videos across folders, emulators and mobile cache files.",
+    "bullets": [
+      "Created a local full-stack application managing three cache sources - local folders, Android emulators, and mobile cache files - with SQLite-backed storage.",
+      "Implemented API-based availability checks, local playback, time-synchronised danmaku, MP4 export, scheduled background checks, multilingual UI, and Docker deployment."
+    ],
+    "tags": [
+      "Node.js",
+      "Express.js",
+      "SQLite",
+      "Docker",
+      "FFmpeg"
+    ]
+  },
+  {
+    "slug": "tasmania-tech-dashboard",
+    "title": "Tasmania Tech / Research Intelligence Dashboard",
+    "period": "Feb 2026 – Apr 2026",
+    "featured": true,
+    "link": "https://github.com/Zeeekrom/TamaniaGithubResearch",
+    "description": "Dashboard analysing GitHub repositories and research projects connected to Tasmania and UTAS.",
+    "bullets": [
+      "Built a Tasmania-focused dashboard to analyse GitHub repositories and University of Tasmania research projects using API and CSV/JSON data.",
+      "Processed and classified repository data, visualised project activity and technology stacks in Power BI, and integrated a lightweight RAG assistant for repository-based Q&A."
+    ],
+    "tags": [
+      "Node.js",
+      "Neo4j",
+      "Power BI",
+      "RAG"
+    ]
+  },
+  {
+    "slug": "personal-english-bank",
+    "title": "Personal English Bank",
+    "period": "2026",
+    "link": "https://github.com/Zeeekrom/personal-english-bank",
+    "description": "A traceable personal English-learning workflow built with Next.js, NestJS, Prisma and SQL Server.",
+    "bullets": [],
+    "tags": [
+      "Next.js",
+      "NestJS",
+      "Prisma",
+      "SQL Server",
+      "TypeScript"
+    ]
+  },
+  {
+    "slug": "ue5-financial-education",
+    "title": "UE5 Financial Education Capstone",
+    "period": "Oct 2025 – Feb 2026",
+    "description": "Modular UE5 financial-education system with AI-driven NPCs and a FastAPI + RAG backend.",
+    "bullets": [
+      "Created a modular UE5 interactive experience with AI-driven NPCs, configurable questions, scoring workflows, PBR environments, and VR-ready interactions.",
+      "Connected the UE5 client to FastAPI, structured question data, RAG retrieval, and LLM services, then validated API, integration, and end-to-end interaction workflows."
+    ],
+    "tags": [
+      "Unreal Engine 5",
+      "Blueprint",
+      "C++",
+      "FastAPI",
+      "RAG",
+      "VR"
+    ]
+  },
+  {
+    "slug": "ai-town",
+    "title": "AI Town Multi-Agent Simulation",
+    "period": "Oct 2025 – Dec 2025",
+    "description": "Django-based virtual town simulation focused on multi-agent behaviour and memory-driven planning.",
+    "bullets": [
+      "Architected a Django-based multi-agent virtual town implementing observation, memory, reflection, planning, event interactions, logging, replay, and web visualisation for AI education."
+    ],
+    "tags": [
+      "Python",
+      "Django",
+      "Multi-Agent Systems",
+      "LLM Agents"
+    ]
+  },
+  {
+    "slug": "little-red-sequel",
+    "title": "Little Red: Sequel",
+    "period": "Dec 2023 – May 2024",
+    "description": "Independently developed story-driven 3D pixel-style Unreal Engine indie game demo.",
+    "bullets": [
+      "Developed a story-driven 3D pixel-style Unreal Engine game demo featuring dark-fantasy worldbuilding, hub-based exploration, nonlinear quests, interactive dialogue, and multiple endings.",
+      "Designed Blueprint systems for quests, dialogue, levels, scenes, menus, and AIGC-assisted asset production, combining 2D pixel art with 3D environments."
+    ],
+    "tags": [
+      "Unreal Engine",
+      "Blueprint",
+      "Game Design",
+      "AIGC"
+    ]
+  }
+]

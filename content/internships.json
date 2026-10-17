@@ -1,0 +1,57 @@
+[
+  {
+    "org": "Strategy&Ops Consultancy",
+    "role": "IT & Digital Systems Intern",
+    "period": "Sep 2026 – Present",
+    "location": "Hobart, TAS",
+    "type": "Internship, three months",
+    "bullets": [
+      "Working on the organisation's website and learning management system, with staging, change control and documentation."
+    ]
+  },
+  {
+    "org": "Qingqiu Technology Co., Ltd.",
+    "role": "Software Engineer Intern",
+    "period": "Dec 2025 – Apr 2026",
+    "type": "Full-time",
+    "bullets": [
+      "Integrated OpenAI Codex and Anthropic Claude into AI-enabled developer processes, configuring system prompts, few-shot prompting, context management, and model interaction logic.",
+      "Developed context-processing and web workflow features for CLAW using JavaScript/Node.js, and validated multi-turn interactions, prompt behaviour, process logic, and generated code."
+    ],
+    "location": "China"
+  },
+  {
+    "org": "Tencent",
+    "role": "Technical Game Systems Intern",
+    "period": "Jun 2025 – Aug 2025",
+    "type": "Full-time",
+    "bullets": [
+      "Analysed win rates, pick rates, skill effectiveness, player feedback, and backend telemetry to inform gameplay balancing, parameter analysis, and system adjustments.",
+      "Modelled and iterated skill configurations and numerical parameters in Excel and internal simulation tools, including damage, healing, cooldowns, mana costs, movement decay, and effect stacking.",
+      "Prototyped and debugged Lua gameplay modules and collaborated with engineers on state-machine restructuring, interaction validation, multiplayer testing, and VFX/SFX/animation synchronisation."
+    ],
+    "location": "China"
+  },
+  {
+    "org": "Perfect World Co., Ltd.",
+    "role": "AI Workflow Engineering Intern",
+    "period": "Nov 2023 – Jan 2024",
+    "type": "Full-time",
+    "bullets": [
+      "Curated structured datasets for One Punch Man: World through data collection, annotation, style tagging, and maintenance for 2D/3D characters and props.",
+      "Trained and refined LoRA models with Stable Diffusion and ComfyUI, and collaborated on Python/Java/C++ automation via Jenkins, Unity asset integration, technical documentation, and troubleshooting."
+    ],
+    "location": "China"
+  },
+  {
+    "org": "Lilith Games",
+    "role": "AI Workflow Engineering Intern",
+    "period": "Jun 2023 – Sep 2023",
+    "type": "Full-time",
+    "bullets": [
+      "Automated Unity batch operations with Python and C#, streamlining asset import, classification, compression, and tagging while reducing repetitive manual processing.",
+      "Developed AIGC production pipelines across global live-service titles, spanning dataset preprocessing, LoRA fine-tuning, Stable Diffusion/ComfyUI tools, DCC integration, documentation, and training for non-technical art teams."
+    ],
+    "location": "China"
+  }
+]

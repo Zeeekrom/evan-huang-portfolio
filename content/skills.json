@@ -1,0 +1,120 @@
+[
+  {
+    "title": "Data Analytics & Business Intelligence",
+    "items": [
+      "Python",
+      "SQL",
+      "Power BI",
+      "Pandas",
+      "NumPy",
+      "Data Cleaning",
+      "Data Processing",
+      "Data Visualisation",
+      "Dashboard Development",
+      "Reporting",
+      "Data Quality",
+      "CSV/JSON Processing"
+    ]
+  },
+  {
+    "title": "Business Analysis & IT Systems",
+    "items": [
+      "Workflow Analysis",
+      "Process Improvement",
+      "Process Standardisation",
+      "Stakeholder Coordination",
+      "Application Integration",
+      "Database Management",
+      "System Configuration",
+      "Technical Documentation",
+      "Troubleshooting"
+    ]
+  },
+  {
+    "title": "AI Applications, Agents & Automation",
+    "items": [
+      "LLM Integration",
+      "Retrieval-Augmented Generation (RAG)",
+      "Prompt Engineering",
+      "Context Management",
+      "Multi-Agent Systems",
+      "AI Workflow Automation",
+      "Model Evaluation",
+      "PyTorch",
+      "Stable Diffusion",
+      "LoRA Fine-Tuning",
+      "ComfyUI"
+    ]
+  },
+  {
+    "title": "Software Engineering, Web & Backend",
+    "items": [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "React",
+      "Next.js",
+      "PixiJS",
+      "Framer Motion",
+      "Django",
+      "FastAPI",
+      "REST APIs",
+      "SQL",
+      "SQLite",
+      "Azure Functions",
+      "HTML",
+      "CSS"
+    ]
+  },
+  {
+    "title": "Testing, DevOps & IT Support",
+    "items": [
+      "Technical Support",
+      "Application Support",
+      "Software Testing",
+      "Quality Assurance (QA)",
+      "Debugging",
+      "Validation",
+      "User Training",
+      "Git",
+      "Linux",
+      "Docker",
+      "Jenkins",
+      "CI/CD",
+      "Agile Development"
+    ]
+  },
+  {
+    "title": "Game & Interactive Technology",
+    "items": [
+      "Unreal Engine",
+      "Unity",
+      "Blueprint",
+      "C++",
+      "C#",
+      "Lua",
+      "Game Systems Design",
+      "Interaction Design",
+      "AR/VR",
+      "Quest & Dialogue Systems",
+      "AI-driven NPCs"
+    ]
+  },
+  {
+    "title": "Autonomous & Simulation Systems",
+    "items": [
+      "ROS 2",
+      "CARLA",
+      "RViz",
+      "WSL 2",
+      "LiDAR",
+      "Point Clouds",
+      "DBSCAN",
+      "KISS-ICP",
+      "Hesai ROS 2 Driver",
+      "Pandar40P"
+    ]
+  }
+]

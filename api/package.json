@@ -1,0 +1,12 @@
+{
+  "name": "evan-voice-api",
+  "version": "1.0.0",
+  "description": "Voice session broker for the AI presenter",
+  "private": true,
+  "main": "src/functions/*.mjs",
+  "type": "module",
+  "dependencies": {
+    "@azure/data-tables": "^13.3.2",
+    "@azure/functions": "^4.7.0"
+  }
+}

@@ -1,0 +1,166 @@
+name: Deploy to Azure Storage Static Website
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A second push while one deploy is mid-upload would interleave two builds into
+# the same container. Queue them instead.
+concurrency:
+  group: azure-storage-deploy
+  cancel-in-progress: false
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # `next build` type-checks as part of its own pipeline.
+      - name: Build (Next.js static export)
+        run: npm run build
+
+      # A second, stricter pass over the whole project. It has to follow the
+      # build: route types such as LayoutProps are generated into .next/types
+      # during it, so running tsc first fails on a clean checkout even though
+      # the code is correct.
+      - name: Type check
+        run: npx tsc --noEmit
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Content checks
+        run: npm run content
+
+      # presenter.json is the guide's knowledge base in conversation mode, and
+      # it is generated from the built site rather than derived at runtime. Add
+      # content without regenerating it and the tour describes the new work
+      # while a visitor asking about it gets the old answer.
+      #
+      # This cannot deploy it — that needs Function App credentials the repo
+      # does not hold — but it can refuse to let the two drift apart silently.
+      - name: Presenter catalogue is current
+        run: |
+          node scripts/gen-presenter.mjs
+          if ! git diff --quiet -- api/presenter.json; then
+            echo "::error::api/presenter.json is out of date."
+            echo "Run: npm run build && node scripts/gen-presenter.mjs"
+            echo "Then commit it, and redeploy the Function App so conversation mode sees the change."
+            git diff --stat -- api/presenter.json
+            exit 1
+          fi
+          echo "presenter.json matches the built site."
+
+
+      # A green build that produced nothing would otherwise upload an empty
+      # directory over a working site.
+      - name: Verify export
+        run: |
+          test -f out/index.html
+          test -f out/explore/index.html
+          test -f out/resume/Evan-Huang-Resume.pdf
+          echo "export contains $(find out -type f | wc -l) files"
+
+      - name: Upload to Azure Storage $web container
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            az storage blob upload-batch \
+              --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" \
+              --destination '$web' \
+              --source out \
+              --overwrite \
+              --only-show-errors
+
+      # The upload above sets no Cache-Control, and browsers then guess badly:
+      # a visitor who loaded the site before a deploy can be served the old
+      # HTML without revalidating, pointing at chunk filenames the prune step
+      # has already deleted. So re-upload the two groups that need saying.
+      #
+      # There is no `update-batch` for blob properties, and per-blob `update`
+      # over every asset would be hundreds of calls — so these are uploads
+      # that carry the header. Re-sending _next/static is a few seconds and
+      # a couple of MB; enumerating everything *except* those two patterns
+      # would be fragile in a way this is not.
+      - name: Set cache headers
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            CS="${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
+            # Hashed filenames: the bytes under a given name can never change.
+            az storage blob upload-batch --connection-string "$CS" \
+              --destination '$web' --source out --pattern '_next/static/*' \
+              --content-cache 'public, max-age=31536000, immutable' \
+              --overwrite --only-show-errors
+            # Entry points: always ask, so a deploy is visible immediately.
+            az storage blob upload-batch --connection-string "$CS" \
+              --destination '$web' --source out --pattern '*.html' \
+              --content-cache 'no-cache' \
+              --overwrite --only-show-errors
+
+      # Next emits the share cards without a file extension, and Storage infers
+      # content type from the extension — so they upload as octet-stream and no
+      # platform renders the preview. Re-upload those few blobs by hand.
+      - name: Set content type on the share images
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            CS="${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
+            cd out
+            find . -name 'opengraph-image' -o -name 'twitter-image' | while read -r f; do
+              blob="${f#./}"
+              echo "  image/png  $blob"
+              az storage blob upload --connection-string "$CS" -c '$web' \
+                -n "$blob" -f "$f" --content-type image/png \
+                --content-cache 'public, max-age=3600' --overwrite --only-show-errors
+            done
+
+      # upload-batch only adds and replaces. Hashed asset filenames change every
+      # build, so without this the container accumulates every chunk ever built.
+      - name: Prune assets no longer in the build
+        uses: azure/cli@v2
+        with:
+          inlineScript: |
+            CS="${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
+            az storage blob list --connection-string "$CS" -c '$web' \
+              --prefix '_next/static/' --query "[].name" -o tsv > /tmp/remote.txt
+            (cd out && find _next/static -type f) | sort > /tmp/local.txt
+            sort /tmp/remote.txt -o /tmp/remote.txt
+            comm -23 /tmp/remote.txt /tmp/local.txt > /tmp/stale.txt
+            echo "stale blobs: $(wc -l < /tmp/stale.txt)"
+            while read -r blob; do
+              [ -z "$blob" ] && continue
+              az storage blob delete --connection-string "$CS" -c '$web' -n "$blob" --only-show-errors
+            done < /tmp/stale.txt
+
+      - name: Smoke test the live site
+        run: |
+          BASE="https://evanhuangportfolio.z44.web.core.windows.net"
+          fail=0
+          for path in "/" "/explore" "/resume/Evan-Huang-Resume.pdf"; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$BASE$path")
+            echo "$code  $path"
+            [ "$code" = "200" ] || fail=1
+          done
+
+          # A page browsers may serve from cache without asking can stay stale
+          # through a deploy, which reads as the deploy not having happened.
+          cc=$(curl -s -o /dev/null -D - "$BASE/explore/" | grep -i '^cache-control:' || true)
+          echo "explore ${cc:-<none>}"
+          case "$cc" in *no-cache*) ;; *) echo "  ^ HTML is missing no-cache"; fail=1 ;; esac
+
+          exit $fail

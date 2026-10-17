@@ -1,0 +1,27 @@
+{
+  "heading": "About Me",
+  "paragraphs": [
+    "I'm a Master of Information Technology and Systems student at the University of Tasmania. My path here wasn't a straight line: digital media and game design, then software engineering, then four internships in China — including Tencent and Perfect World — and a startup I co-founded.",
+    "Those roles taught me as much about people as about systems. I coordinated recruitment for a 20-person startup, worked with more than 20 outside partners as a co-founder, and trained non-technical art teams to use AI tools. Building something is rarely the hard part; getting people to use it is.",
+    "Since moving to Hobart I've tried to be part of the community, not just study in it: Digital Mentor at Glenorchy Library, STEAMM robotics workshops for children, VR at the Festival of Bright Ideas, and websites and tools for Be Hers and the Darling Downs Environment Council. From 2027 I'll mentor through Raise.",
+    "Right now I'm interning in IT and digital systems at Strategy&Ops Consultancy in Hobart — website and LMS work, staging and change control — and still doing LiDAR perception with the UTAS Motorsport autonomous vehicle team. I'm most useful where IT systems, data and AI meet the people who rely on them."
+  ],
+  "facts": [
+    {
+      "label": "Based in",
+      "value": "Hobart, Tasmania"
+    },
+    {
+      "label": "Degree",
+      "value": "MIT&S, University of Tasmania"
+    },
+    {
+      "label": "Internships",
+      "value": "4 completed"
+    },
+    {
+      "label": "Languages",
+      "value": "English, Mandarin (native)"
+    }
+  ]
+}
