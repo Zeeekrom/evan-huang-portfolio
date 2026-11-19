@@ -1,0 +1,127 @@
+[
+  {
+    "label": "数据与 BI",
+    "title": "数据分析与商业智能",
+    "items": [
+      "Python",
+      "SQL",
+      "Power BI",
+      "Pandas",
+      "NumPy",
+      "数据清洗",
+      "数据处理",
+      "数据可视化",
+      "看板开发",
+      "报表",
+      "数据质量",
+      "CSV/JSON 处理"
+    ]
+  },
+  {
+    "label": "业务分析",
+    "title": "业务分析与 IT 系统",
+    "items": [
+      "工作流分析",
+      "流程改进",
+      "流程标准化",
+      "干系人协调",
+      "应用集成",
+      "数据库管理",
+      "系统配置",
+      "技术文档",
+      "故障排查"
+    ]
+  },
+  {
+    "label": "AI 与智能体",
+    "title": "AI 应用、智能体与自动化",
+    "items": [
+      "大模型集成",
+      "检索增强生成（RAG）",
+      "提示词工程",
+      "上下文管理",
+      "多智能体系统",
+      "AI 工作流自动化",
+      "模型评估",
+      "PyTorch",
+      "Stable Diffusion",
+      "LoRA 微调",
+      "ComfyUI"
+    ]
+  },
+  {
+    "label": "软件与 Web",
+    "title": "软件工程、Web 与后端",
+    "items": [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "React",
+      "Next.js",
+      "PixiJS",
+      "Framer Motion",
+      "Django",
+      "FastAPI",
+      "REST API",
+      "SQL",
+      "SQLite",
+      "Azure Functions",
+      "HTML",
+      "CSS"
+    ]
+  },
+  {
+    "label": "测试与支持",
+    "title": "测试、DevOps 与 IT 支持",
+    "items": [
+      "技术支持",
+      "应用支持",
+      "软件测试",
+      "质量保证（QA）",
+      "调试",
+      "验证",
+      "用户培训",
+      "Git",
+      "Linux",
+      "Docker",
+      "Jenkins",
+      "CI/CD",
+      "敏捷开发"
+    ]
+  },
+  {
+    "label": "交互技术",
+    "title": "游戏与交互技术",
+    "items": [
+      "Unreal Engine",
+      "Unity",
+      "Blueprint",
+      "C++",
+      "C#",
+      "Lua",
+      "游戏系统设计",
+      "交互设计",
+      "AR/VR",
+      "任务与对话系统",
+      "AI 驱动 NPC"
+    ]
+  },
+  {
+    "label": "自动驾驶与仿真",
+    "title": "自主系统与仿真",
+    "items": [
+      "ROS 2",
+      "CARLA",
+      "RViz",
+      "WSL 2",
+      "LiDAR",
+      "点云",
+      "DBSCAN",
+      "KISS-ICP",
+      "Hesai ROS 2 Driver",
+      "Pandar40P"
+    ]
+  }
+]

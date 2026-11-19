@@ -1,0 +1,60 @@
+{
+  "heading": "Case Studies",
+  "aside": "Six narrated walkthroughs. Synthetic data throughout.",
+  "items": [
+    {
+      "slug": "rivulet",
+      "title": "Rivulet LocalOps",
+      "line": "One synthetic request through ten written checks: where it is, whose jurisdiction it falls in, what the policy allows, and who signed it off.",
+      "length": "3:43",
+      "shot": "/shots/case-rivulet.jpg",
+      "alt": "A map view showing a reported point in Glenorchy and the council it was referred to",
+      "url": "https://zeeekrom.github.io/rivulet-localops/film/"
+    },
+    {
+      "slug": "lifeops",
+      "title": "LifeOps Atlas",
+      "line": "What the system checked and what it refused to guess, ending on the numbers from the side-by-side trial rather than on a claim.",
+      "length": "1:04",
+      "shot": "/shots/case-lifeops.jpg",
+      "alt": "A summary screen: 43 days of trial, 418 past records reconciled, 288 of 295 automated tests passed",
+      "url": "https://zeeekrom.github.io/lifeops-atlas-showcase/video/"
+    },
+    {
+      "slug": "agrisentry",
+      "title": "AgriSentry",
+      "line": "A farm AI that watches, explains in plain words, and still waits for a person before anything is sprayed.",
+      "length": "2:37",
+      "shot": "/shots/case-agrisentry.jpg",
+      "alt": "The farm risk dashboard answering a question about which blocks need attention today",
+      "url": "https://zeeekrom.github.io/agrisentry/film/"
+    },
+    {
+      "slug": "payment-agent-lab",
+      "title": "AI-Native Payment & Agent Engineering Lab",
+      "line": "An investigation into a payment agent that passed everything it was asked to pass, and what that still did not prove.",
+      "length": "3:57",
+      "shot": "/shots/case-payment-agent-lab.jpg",
+      "alt": "A still from the film: the reconciliation pipeline with a disputed payment held for review",
+      "url": "https://zeeekrom.github.io/payment-reconciliation-engine/film/"
+    },
+    {
+      "slug": "ue5-financial-education",
+      "title": "Cyber Finance City",
+      "line": "A walk through the UE5 city, where the questions the characters ask come from a retrieval service rather than from the level.",
+      "length": "1:24",
+      "shot": "/shots/case-cyber-finance-city.jpg",
+      "alt": "A still from the film: the neon city scene used for the financial-education experience",
+      "url": "https://zeeekrom.github.io/cyber-finance-city/film/"
+    },
+    {
+      "slug": "little-red-sequel",
+      "title": "Little Red: Sequel",
+      "line": "A solo Unreal Engine game whose pixel-style art came off a Stable Diffusion pipeline rather than being drawn one asset at a time.",
+      "length": "3:15",
+      "shot": "/shots/case-little-red-sequel.jpg",
+      "alt": "A still from the film: the dark-fantasy hub of the game",
+      "url": "https://zeeekrom.github.io/little-red-sequel/film/"
+    }
+  ]
+}

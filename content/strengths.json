@@ -1,0 +1,133 @@
+{
+  "heading": "What I'm Good At",
+  "aside": "Pick an area. The panel shows where it was actually used.",
+  "spine": "I wrote the code, supported it inside other people's organisations, and now spend most of my time where the systems meet the people who have to run them.",
+  "stages": [
+    {
+      "label": "Data & BI",
+      "lead": "Numbers somebody has to act on.",
+      "rows": [
+        {
+          "label": "Tencent",
+          "text": "Win rates, pick rates, skill effectiveness and backend telemetry, read closely enough to inform the parameters a live game was balanced on."
+        },
+        {
+          "label": "AgriSentry",
+          "text": "Simulated weather and sensor data turned into per-crop risk alerts on the Power Platform, with a Power BI dashboard over an immutable audit trail."
+        },
+        {
+          "label": "Malou Media",
+          "text": "300+ candidates screened, with regular reporting on candidate sources, conversion rates and time-to-hire."
+        }
+      ]
+    },
+    {
+      "label": "Business Analysis",
+      "lead": "The requirement nobody wrote down.",
+      "rows": [
+        {
+          "label": "Strategy&Ops Consultancy",
+          "text": "The website and learning management system of a strategy and operations consultancy, with staging, change control and documentation."
+        },
+        {
+          "label": "Tasmania Student Notes",
+          "text": "A six-language publication with a newsroom of AI roles, specified so that a human editor approves every result before it is published."
+        },
+        {
+          "label": "Malou Media",
+          "text": "Ran recruitment end to end, single-handed, for a 20-person organisation across content, livestreaming and operations."
+        }
+      ]
+    },
+    {
+      "label": "AI & Agents",
+      "lead": "A model answers a question. A workflow has to be safe to run.",
+      "rows": [
+        {
+          "label": "Qingqiu Technology",
+          "text": "Integrated OpenAI Codex and Anthropic Claude into developer workflows — system prompts, few-shot prompting, context management, model interaction logic — and built CLAW's context-processing and web features in Node.js."
+        },
+        {
+          "label": "Payment & Agent Lab",
+          "text": "A FastAPI/SQLite payment prototype and a read-only operations copilot: normalising results from three simulated channels, event de-duplication, audit logging and a deterministic state machine."
+        },
+        {
+          "label": "Perfect World · Lilith Games",
+          "text": "AIGC production pipelines across global live-service titles — LoRA fine-tuning, dataset curation, and training non-technical art teams to use the tools."
+        }
+      ]
+    },
+    {
+      "label": "Software & Web",
+      "lead": "Things that have to keep running after I leave.",
+      "rows": [
+        {
+          "label": "This site",
+          "text": "Next.js static export with a content layer that refuses the build when a link does not resolve, a status is invented, or a second language creeps back in. 104 tests sit behind it."
+        },
+        {
+          "label": "LifeOps Atlas",
+          "text": "Node.js 24, TypeScript, Fastify 5 and PostgreSQL 17: one canonical database with append-only corrections, so a correction never destroys what it corrected."
+        },
+        {
+          "label": "Rivulet LocalOps",
+          "text": "A written policy compiled into checks a decision has to pass, with every step recorded in a tamper-evident ledger and reviewed by a second person."
+        }
+      ]
+    },
+    {
+      "label": "Testing & Support",
+      "lead": "The unglamorous half, which is the half that decides whether a system survives.",
+      "rows": [
+        {
+          "label": "UTAS Motorsport",
+          "text": "Multi-lap, multi-track, sensor-fault and dynamic-obstacle tests: 8/8 scenarios and 24/24 laps passed in the final software matrix."
+        },
+        {
+          "label": "Strategy&Ops Consultancy",
+          "text": "Staging, change control and documentation, so a change can be reviewed before it reaches the people who depend on the system."
+        },
+        {
+          "label": "Peer tutoring",
+          "text": "One-to-one support for a classmate from a non-IT background across two units — explaining concepts and breaking requirements into steps rather than handing over answers."
+        }
+      ]
+    },
+    {
+      "label": "Interactive",
+      "lead": "Built for people who never asked for a manual.",
+      "rows": [
+        {
+          "label": "UE5 Financial Education",
+          "text": "A modular Unreal Engine 5 financial-education experience with AI-driven NPCs and a FastAPI + RAG backend."
+        },
+        {
+          "label": "Little Red: Sequel",
+          "text": "A story-driven 3D pixel-style Unreal Engine demo, independently developed, with dark-fantasy worldbuilding and hub-based scenes."
+        },
+        {
+          "label": "Inspired Mind Lab",
+          "text": "Setting up and testing the robots and tablets for children's STEAMM workshops, then helping the children debug their own — the fastest way to learn what an interface does to someone using it for the first time."
+        }
+      ]
+    },
+    {
+      "label": "Autonomy & Sim",
+      "lead": "Perception you have to be able to trust.",
+      "rows": [
+        {
+          "label": "UTAS Motorsport",
+          "text": "A full pipeline in CARLA, ROS 2 and RViz: virtual 40-channel LiDAR, DBSCAN cone detection, multi-frame tracking, KISS-ICP localisation, centre-path generation and path following."
+        },
+        {
+          "label": "Hesai Pandar40P",
+          "text": "The official Hesai ROS 2 driver, built for the hardware testing that follows the simulation."
+        },
+        {
+          "label": "AI Town",
+          "text": "A Django-based multi-agent simulation built around observation, memory and planning rather than scripted behaviour."
+        }
+      ]
+    }
+  ]
+}

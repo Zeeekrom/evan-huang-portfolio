@@ -1,0 +1,45 @@
+{
+  "heading": "Copyright and terms",
+  "aside": "What is mine, what is borrowed, and what this site records about you.",
+  "updated": "Last updated: 20 November 2026",
+  "notice": "Drafted with AI assistance and not reviewed by a lawyer.",
+  "sections": [
+    {
+      "heading": "Copyright",
+      "paragraphs": [
+        "© 2026 Evan Huang. All rights reserved.",
+        "Unless a page says otherwise, everything here is mine: the writing, the project descriptions, the photographs I took, and the code and design of the site itself. None of it may be republished, copied or adapted without written permission.",
+        "What copyright law already allows is untouched by this. Quoting a reasonable extract for review, criticism, news reporting, study or research needs no permission from me.",
+        "Links are welcome, and you never need to ask before linking here."
+      ]
+    },
+    {
+      "heading": "What is not allowed",
+      "paragraphs": [
+        "Using my name, marks or the look of this site in a way that suggests work is mine when it is not, or that you are me.",
+        "Copying or rebuilding this site's own code and design — by hand, with automated tools, or with an AI that clones pages.",
+        "Reverse engineering, except where the law expressly permits it.",
+        "Bulk-copying the site wholesale, or automated requests heavy enough to be a burden on it. Ordinary crawling is welcome: robots.txt says who may read what, and the AI crawlers named there are allowed on purpose — the writing on these pages is meant to be found.",
+        "Attacking the site, or trying to reach anything on it that is not public."
+      ]
+    },
+    {
+      "heading": "Borrowed, under their own licences",
+      "paragraphs": [
+        "Nothing above restricts the open-source work this site is built on. Each piece keeps its own licence and its own permissions.",
+        "Next.js, React, PixiJS and Tailwind CSS — MIT licence. The guide's broker also uses the Azure Functions and Azure Data Tables libraries for JavaScript — MIT licence.",
+        "The photograph on the opening screen is not mine. Its author and its licence are named on the picture itself, and that licence, not this page, governs what you may do with it."
+      ]
+    },
+    {
+      "heading": "What this site records",
+      "paragraphs": [
+        "This site is a set of static files on Cloudflare Pages. It sets no cookies, runs no analytics, and loads no webfonts. Two things on the page come from Cloudflare rather than from me. My email address is rewritten at their edge so that address-harvesting crawlers cannot read it, which costs one small script and means the address needs JavaScript before it becomes a link. And if a request fails, your browser may report that failure to Cloudflare; successful requests are not reported.",
+        "Two things are kept in your own browser and never sent anywhere: which theme you last chose on the canvas page, and, on the admin page, a key that only I would have.",
+        "Two things do leave your browser, and only when you start them yourself. Asking the guide a question sends that question to a small function app I run, which passes it to a language model and returns the answer; I keep no record of what was asked. Starting the spoken tour opens an audio connection from your browser straight to the speech provider — the function app hands out a short-lived credential and then steps out of the path.",
+        "Cloudflare hosts the pages and Microsoft hosts the function app, and each keeps its own server logs of requests in the ordinary way. I add nothing to them. Neither is pinned to a country: Cloudflare serves these files from whichever of its locations is nearest to you."
+      ]
+    }
+  ],
+  "backLabel": "Back to the site"
+}

@@ -1,0 +1,95 @@
+{
+  "heading": "我是谁",
+  "aside": "怎么走到这里的，以及我能帮上什么。",
+  "portrait": {
+    "src": "/shots/avatar.jpg",
+    "alt": "黄宇翔的头像"
+  },
+  "lead": "我做别人要靠着它干活的软件：IT、数据和 AI 系统，我负责把它建起来，也负责把它测到能用。",
+  "paragraphs": [
+    "我正在塔斯马尼亚大学读完信息技术与系统硕士。我的经历覆盖 AI 智能体工程、数据与商业分析、交互与仿真技术，以及网站开发：四段全职带薪实习、两次联合创业，现在在澳大利亚做一段 IT 实习。",
+    "在一家 AI 开发者工具公司做 AI 智能体开发，把 AI 编程助手接进一个 Cursor 式的 IDE 并做测试——难的不是模型，是围着它的提示词、上下文和测试。腾讯是全球最大的科技与游戏公司之一，我在那里分析对局数据、给《王者荣耀》搭玩法逻辑原型；再往前在完美世界和莉莉丝给美术团队做工具和内容流水线。",
+    "我联合创办过一家增强现实公司，给购物中心和景区策划基于位置的 AR 游戏，我带 AI 内容这一侧，一直做到种子轮商业计划。后来联合创办了一家直播媒体公司，在那里独立负责二十人团队的招聘和入职——筛了 300 多个人，教会我怎么把要求写成别人答得上来的样子。",
+    "我做志愿的方式跟我做事的方式一样。在 Glenorchy 图书馆做一对一的数字帮助——那是最便宜的可用性测试。在 Rokeby 的儿童 STEAMM 工作坊，我先把机器人和 iPad 测一遍，到了现场把 Blockly 的报错交回给孩子自己调。我也在 Hospitals South 消费者代表名册上。另外两件 2027 年才开始：通过 Raise 在霍巴特高中做青少年导师；以及为 Mother's Day Classic 做本地赞助对接。",
+    "现在我在 AIA-Institute 做代理 CTO，为澳大利亚机构搭一个 AI 平台；它还没发布，所以这里不会再多写。同时我在 Strategy&Ops Consultancy 负责 IT 系统的活儿，在 UTAS Motorsport 做激光雷达感知。这一页上的东西都出自同一个判断：一个能答出问题的模型，还不是一个机构能运行起来的系统。",
+    "我在找塔斯马尼亚的毕业生和初级岗位、兼职、实习和实践机会，方向是软件开发、数据与商业分析，或交互与仿真技术。如果这些对你有用，很乐意聊聊。"
+  ],
+  "logos": {
+    "employers": [
+      {
+        "org": "AIA-Institute",
+        "src": "/logos/aia-institute.png",
+        "alt": "AIA-Institute"
+      },
+      {
+        "org": "Strategy&Ops Consultancy",
+        "src": "/logos/strategy-and-ops.png",
+        "alt": "Strategy&Ops Consultancy"
+      },
+      {
+        "org": "Tencent",
+        "src": "/logos/tencent.png",
+        "alt": "腾讯"
+      },
+      {
+        "org": "Perfect World",
+        "src": "/logos/perfect-world.png",
+        "alt": "完美世界"
+      },
+      {
+        "org": "Lilith Games",
+        "src": "/logos/lilith-games.png",
+        "alt": "莉莉丝游戏"
+      }
+    ],
+    "community": [
+      {
+        "org": "Libraries Tasmania",
+        "src": "/logos/libraries-tasmania.png",
+        "alt": "Libraries Tasmania"
+      },
+      {
+        "org": "Tasmanian Health Service",
+        "src": "/logos/tasmanian-health.svg",
+        "alt": "Tasmanian Health Service"
+      },
+      {
+        "org": "Raise Foundation",
+        "src": "/logos/raise.svg",
+        "alt": "Raise Foundation"
+      },
+      {
+        "org": "Mother's Day Classic Foundation",
+        "src": "/logos/mothers-day-classic.png",
+        "alt": "Mother's Day Classic"
+      },
+      {
+        "org": "UTAS Student Ambassador",
+        "src": "/logos/utas.svg",
+        "alt": "University of Tasmania — Student Ambassador"
+      }
+    ]
+  },
+  "facts": [
+    {
+      "label": "5",
+      "value": "段实习"
+    },
+    {
+      "label": "4",
+      "value": "份志愿"
+    },
+    {
+      "label": "3",
+      "value": "个国家"
+    },
+    {
+      "label": "2",
+      "value": "次创业"
+    },
+    {
+      "label": "1",
+      "value": "个我"
+    }
+  ]
+}

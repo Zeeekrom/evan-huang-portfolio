@@ -1,0 +1,94 @@
+[
+  {
+    "id": "inspired-mind-lab",
+    "org": "Inspired Mind Lab",
+    "role": "STEAMM Workshop Volunteer",
+    "period": "2026 – Present",
+    "status": "current",
+    "field": "Education",
+    "location": "Rokeby, TAS",
+    "bullets": [
+      "Set up and tested the Dash robots and iPads for two children's STEAMM workshops, fixing the Bluetooth, app and device faults before each session, then guided children aged 6 to 12 through robot movement and Blockly debugging — handing the errors back to them rather than correcting the code — and reported the technical observations in the workshop reviews."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "utas-motorsport",
+    "org": "UTAS Motorsport",
+    "role": "LiDAR & Autonomous Systems Contributor",
+    "period": "Jul 2026 – Present",
+    "status": "current",
+    "field": "Science and technology",
+    "location": "Hobart, TAS",
+    "bullets": [
+      "A multidisciplinary student engineering team, testing autonomous-vehicle perception and simulation workflows in Python, ROS 2, CARLA, RViz and LiDAR."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "libraries-tasmania",
+    "org": "Libraries Tasmania — Glenorchy Library",
+    "role": "Digital Mentor",
+    "period": "Aug 2026 – Present",
+    "status": "current",
+    "field": "Education",
+    "location": "Glenorchy, TAS",
+    "bullets": [
+      "Provide one-to-one digital inclusion support, guiding community members through everyday technology tasks, adapting explanations to individual needs, and helping users build confidence and independence with digital services."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "utas-student-ambassador",
+    "org": "University of Tasmania",
+    "role": "Student Social Media Ambassador",
+    "period": "Starting 2027",
+    "status": "incoming",
+    "field": "Education",
+    "location": "Hobart, TAS",
+    "bullets": [
+      "Will create photo and video content on student life for the University's social media, and represent UTAS to prospective students at schools, Open Days and community events."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "raise-foundation",
+    "org": "Raise Foundation",
+    "role": "Volunteer Youth Mentor",
+    "period": "Starting Apr 2027",
+    "status": "incoming",
+    "field": "Education",
+    "location": "Hobart High School, TAS",
+    "bullets": [
+      "Selected and trained for Raise's in-school mentoring program; completed mentor training in October 2026, covering youth safety and reporting, what young people need from a mentor, and practice sessions. Structured one-to-one mentoring begins in 2027."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "mothers-day-classic",
+    "org": "Mother's Day Classic Foundation",
+    "role": "Local Sponsorships Lead",
+    "period": "Starting 2027",
+    "status": "incoming",
+    "field": "Fundraising",
+    "location": "Tasmania",
+    "bullets": [
+      "Will grow local business sponsorship and in-kind support in Hobart, Launceston and across Tasmania for the event, which raises funds for breast and ovarian cancer research."
+    ],
+    "evidence": []
+  },
+  {
+    "id": "hospitals-south",
+    "org": "Tasmanian Health Service — Hospitals South",
+    "role": "Consumer Representative (Register)",
+    "period": "Aug 2026 – Present",
+    "status": "onboarding",
+    "field": "Health",
+    "location": "Hobart, TAS",
+    "bullets": [
+      "Selected for the Hospitals South Consumer Representative Register, with opportunities to contribute to service planning, quality improvement, document and policy review, and committees or panels.",
+      "Met the consumer engagement team in September 2026 to talk through the register, patient navigation and health literacy."
+    ],
+    "evidence": []
+  }
+]

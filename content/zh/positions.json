@@ -1,0 +1,79 @@
+[
+  {
+    "id": "autonomy-and-accountability",
+    "label": "自主性越大，问责越重",
+    "claim": "一个智能体被给的自主性越大，身份、权限、数据边界、审批、监控、可追溯和由人承担的责任就越重要。",
+    "origin": "practice",
+    "source": "NPC-AI-040",
+    "evidence": [
+      "payment-agent-lab"
+    ],
+    "keyword": "自主性"
+  },
+  {
+    "id": "agent-is-what-it-can-reach",
+    "label": "智能体等于它够得着的东西",
+    "claim": "一个智能体真正的角色，不是提示词里写的那个头衔，而是它实际能够到的命令、文件、shell、包管理器、服务和数据。",
+    "origin": "learned",
+    "source": "NPC-SEC-002",
+    "evidence": [
+      "payment-agent-lab"
+    ]
+  },
+  {
+    "id": "short-loops",
+    "label": "短回路，人在回路里",
+    "claim": "与其把一个任务丢给智能体跑一整夜，我更愿意切成小块、频繁复核、持续纠偏，让人始终握着上下文和质量。",
+    "origin": "learned",
+    "source": "NPC-AI-005",
+    "evidence": [
+      "payment-agent-lab",
+      "work-qingqiu-technology-co-ltd-work-1"
+    ]
+  },
+  {
+    "id": "human-judgement-sets-value",
+    "label": "值多少钱由人的判断决定",
+    "claim": "AI 应该延长专业知识，而不是取代创造性判断：人的审美、品牌、玩法机制和独特输入，决定了产出到底值什么。",
+    "origin": "practice",
+    "source": "NPC-AI-009",
+    "evidence": [
+      "work-perfect-world-co-ltd-work-1",
+      "work-lilith-games-work-1"
+    ],
+    "keyword": "判断"
+  },
+  {
+    "id": "tested-or-assumed",
+    "label": "说清楚哪些验过，哪些是假设",
+    "claim": "原型就该说自己是原型。我把验过的和还在假设的分开：失败用例写下来，边界写在页面上而不是脚注里，一个还没发布过任何东西的试点，就明说它没有。",
+    "origin": "practice",
+    "source": "Own event debriefs and project notes, 2026",
+    "evidence": [
+      "tasmania-student-notes",
+      "payment-agent-lab"
+    ],
+    "keyword": "证据"
+  },
+  {
+    "id": "people-who-bridge",
+    "label": "AI 需要能搭桥的人",
+    "claim": "要让 AI 真正干活，需要一种跨界的角色：懂业务、能挖出真正的需求、能把规格定下来，并且能和动手做的人一起干。",
+    "origin": "practice",
+    "source": "NPC-AI-016",
+    "evidence": [
+      "tasmania-student-notes"
+    ],
+    "keyword": "搭桥"
+  },
+  {
+    "id": "model-is-not-a-workflow",
+    "label": "模型不等于工作流",
+    "claim": "真正要紧的差距，是一个能答出问题的模型，和一个能安全地用上真实数据、权限与人工复核的工作流之间的差距。",
+    "origin": "learned",
+    "source": "ICT award nomination statement, 24 Sep 2026",
+    "evidence": [
+      "payment-agent-lab"
+    ]
+  }
+]

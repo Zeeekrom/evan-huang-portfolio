@@ -1,0 +1,100 @@
+<!doctype html>
+<!--
+  The old address, after the move to evanh.dev.
+
+  An Azure Storage static website cannot send a 301 — that is why the site
+  moved in the first place — so this is the next best thing, and it is the
+  whole of what Azure serves now. It is also the 404 document, which is what
+  makes a deep link work: any path that is not index.html lands here, and the
+  script reads the path it was asked for and carries it across.
+
+  Three ways out, in order of how fast they fire:
+
+    1. The script, which keeps the path, the query and the fragment, and
+       uses replace() so the back button does not bounce you back here.
+    2. The meta refresh, for a browser with JavaScript off. It can only go
+       to the home page — a meta refresh has no way to read the path.
+    3. The link, for a browser that honours neither, and for anyone who
+       wants to see where they are being sent before they go.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Evan Huang — this site has moved to evanh.dev</title>
+    <meta name="description" content="Evan Huang's portfolio has moved to evanh.dev." />
+    <link rel="canonical" href="https://evanh.dev/" />
+    <meta http-equiv="refresh" content="2; url=https://evanh.dev/" />
+    <style>
+      :root {
+        --bg: #f4f4f5;
+        --ink: #111113;
+        --ink2: #5b5b62;
+        --rule: #d8d8dd;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111113;
+          --ink: #f2f2f4;
+          --ink2: #a0a0a8;
+          --rule: #2c2c31;
+        }
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        box-sizing: border-box;
+      }
+      main {
+        max-width: 34rem;
+      }
+      h1 {
+        font-size: clamp(1.4rem, 5vw, 1.9rem);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        margin: 0 0 0.9rem;
+      }
+      p {
+        color: var(--ink2);
+        margin: 0 0 1.1rem;
+      }
+      a {
+        color: var(--ink);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+      }
+      .where {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 1.05rem;
+        padding-top: 1.1rem;
+        border-top: 1px solid var(--rule);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>This site has moved.</h1>
+      <p>Evan Huang's portfolio now lives at its own address. You are being sent there now.</p>
+      <p class="where"><a id="to" href="https://evanh.dev/">evanh.dev</a></p>
+    </main>
+    <script>
+      (function () {
+        var target = "https://evanh.dev" + location.pathname + location.search + location.hash;
+        var link = document.getElementById("to");
+        if (link) link.href = target;
+        location.replace(target);
+      })();
+    </script>
+  </body>
+</html>

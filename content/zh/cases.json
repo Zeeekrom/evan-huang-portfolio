@@ -1,0 +1,60 @@
+{
+  "heading": "案例研究",
+  "aside": "六段带讲解的走查。全程使用模拟数据。",
+  "items": [
+    {
+      "slug": "rivulet",
+      "title": "Rivulet LocalOps",
+      "line": "一条模拟请求走过十道写明的检查：它在哪里、归谁管辖、政策允许什么、以及最后是谁签的字。",
+      "length": "3:43",
+      "shot": "/shots/case-rivulet.jpg",
+      "alt": "地图视图：一个上报点落在 Glenorchy，以及它被转给了哪个议会",
+      "url": "https://zeeekrom.github.io/rivulet-localops/film/"
+    },
+    {
+      "slug": "lifeops",
+      "title": "LifeOps Atlas",
+      "line": "系统核对了什么，又拒绝猜测什么，最后落在对照试验的数字上，而不是落在一句主张上。",
+      "length": "1:04",
+      "shot": "/shots/case-lifeops.jpg",
+      "alt": "汇总界面：43 天试运行，418 条历史记录完成核对，295 项自动化测试通过 288 项",
+      "url": "https://zeeekrom.github.io/lifeops-atlas-showcase/video/"
+    },
+    {
+      "slug": "agrisentry",
+      "title": "AgriSentry",
+      "line": "一个看着农场的 AI：它会观察、用人话解释，但在任何东西被喷洒之前，仍然要等一个人点头。",
+      "length": "2:37",
+      "shot": "/shots/case-agrisentry.jpg",
+      "alt": "农场风险看板，正在回答今天哪些地块需要处理",
+      "url": "https://zeeekrom.github.io/agrisentry/film/"
+    },
+    {
+      "slug": "payment-agent-lab",
+      "title": "AI-Native Payment & Agent Engineering Lab",
+      "line": "一次调查：一个支付智能体通过了所有要它通过的检查，而这仍然没有证明什么。",
+      "length": "3:57",
+      "shot": "/shots/case-payment-agent-lab.jpg",
+      "alt": "影片截图：对账流程中，一笔有争议的付款被扣下等待复核",
+      "url": "https://zeeekrom.github.io/payment-reconciliation-engine/film/"
+    },
+    {
+      "slug": "ue5-financial-education",
+      "title": "Cyber Finance City",
+      "line": "在 UE5 这座城市里走一遍——角色问出的问题来自一个检索服务，而不是写死在关卡里。",
+      "length": "1:24",
+      "shot": "/shots/case-cyber-finance-city.jpg",
+      "alt": "影片截图：用于金融教育体验的霓虹城市场景",
+      "url": "https://zeeekrom.github.io/cyber-finance-city/film/"
+    },
+    {
+      "slug": "little-red-sequel",
+      "title": "Little Red: Sequel",
+      "line": "一个人做的虚幻引擎游戏，它的像素风美术出自一条 Stable Diffusion 流水线，而不是一张张画出来的。",
+      "length": "3:15",
+      "shot": "/shots/case-little-red-sequel.jpg",
+      "alt": "影片截图：游戏里那个黑暗奇幻风格的中枢场景",
+      "url": "https://zeeekrom.github.io/little-red-sequel/film/"
+    }
+  ]
+}

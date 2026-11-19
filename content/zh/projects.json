@@ -1,0 +1,175 @@
+[
+  {
+    "slug": "rivulet-localops",
+    "title": "Rivulet LocalOps",
+    "kind": "AI agents",
+    "period": "2026.07 – 至今",
+    "featured": true,
+    "link": "https://github.com/Zeeekrom/rivulet-localops",
+    "demo": "https://zeeekrom.github.io/rivulet-localops/film/",
+    "shot": "/shots/rivulet.jpg",
+    "description": "把写成文字的服务政策，变成能执行、能核对、能追到具体负责人的决策。参考场景是一个议会处理垃圾与乱丢弃物的服务请求。",
+    "bullets": [
+      "AI 辅助、政策把闸：模型读请求并给出类型和紧急度建议，但允许发生什么由写下来的政策决定——它只能调高紧急度、永远不能调低——最后由具名的人拍板。",
+      "每条请求都会被诊断、按已批准的政策校验、记进可验篡改的账本，并由第二个人复核。",
+      "独立原型，不是官方议会服务：没有真实居民请求，也不往任何真实议会系统里写数据。"
+    ],
+    "tags": [
+      "Python 3.12",
+      "Claude on Bedrock",
+      "Policy gating",
+      "Audit ledger"
+    ],
+    "poster": "/posters/rivulet-localops.jpg"
+  },
+  {
+    "slug": "lifeops-atlas",
+    "title": "LifeOps Atlas",
+    "kind": "Tooling",
+    "period": "2026.07 – 至今",
+    "link": "https://github.com/Zeeekrom/lifeops-atlas-showcase",
+    "demo": "https://zeeekrom.github.io/lifeops-atlas-showcase/",
+    "shot": "/shots/lifeops-atlas.jpg",
+    "description": "单用户的运营系统，把任务、人际关系、活动调研和求职准备收进同一个有证据支撑的工作区。",
+    "bullets": [
+      "长期记录放在 PostgreSQL 里，更正只追加不覆盖并附上来源证据；AI 只在有边界、可追溯的输入上工作。",
+      "Node.js 24、TypeScript、Fastify 5、Zod、PostgreSQL 17 和 Docker Compose。公开版是用合成记录做的脱敏走查。"
+    ],
+    "tags": [
+      "TypeScript",
+      "Fastify",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "poster": "/posters/lifeops-atlas.jpg"
+  },
+  {
+    "slug": "agrisentry",
+    "title": "AgriSentry",
+    "kind": "Data",
+    "period": "2026.07 – 至今",
+    "link": "https://github.com/Zeeekrom/agrisentry",
+    "demo": "https://zeeekrom.github.io/agrisentry/",
+    "shot": "/shots/agrisentry.jpg",
+    "description": "搭在 Microsoft Power Platform 上的可配置农场监测系统：模拟的天气和传感器数据变成按作物划分的风险预警。",
+    "bullets": [
+      "任何动作发生之前，每一条预警都要人批准；背后是不可改写的审计轨迹，上面是一块 Power BI 看板。",
+      "Power Apps、Dataverse、Power Automate 和 Power BI，规则引擎跑在 Azure Functions 上。数据是合成的，应用源码不公开。"
+    ],
+    "tags": [
+      "Power Platform",
+      "Power BI",
+      "Azure Functions",
+      "Dataverse"
+    ],
+    "poster": "/posters/agrisentry.jpg"
+  },
+  {
+    "slug": "evan-h-portfolio",
+    "title": "Evan.H Portfolio",
+    "kind": "Tooling",
+    "period": "2026.07 – 至今",
+    "link": "https://github.com/Zeeekrom/evan-huang-portfolio",
+    "demo": "https://evanh.dev/",
+    "shot": "/shots/portfolio.jpg",
+    "description": "就是这个站。作品集有两种读者——一种在快速找事实，另一种想四处看看——所以同一份内容被渲染了两遍。",
+    "bullets": [
+      "每个字都放在 content/*.json 里，经过一层带类型的加载器：链接断了、状态是编的、混进第二种语言，都会让构建失败；背后有 104 个测试。",
+      "同一份内容既渲染成这一页，也渲染成可漫游的画布，配一个只能说出幻灯片上有的话的语音向导。"
+    ],
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Azure Storage",
+      "GitHub Actions"
+    ],
+    "poster": "/posters/evan-h-portfolio.jpg"
+  },
+  {
+    "slug": "tasmania-student-notes",
+    "title": "Tasmania Student Notes",
+    "kind": "Tooling",
+    "period": "2026.07 – 至今",
+    "link": "https://github.com/Zeeekrom/tasmania-student-notes-showcase",
+    "demo": "https://tas-stu-notes-preview.azurewebsites.net/",
+    "shot": "/shots/tasmania-student-notes.jpg",
+    "description": "面向塔州的学生独立刊物，六种语言，配一个由四个 AI 角色组成的编辑部，每一份最终结果都由人类编辑批准。",
+    "bullets": [
+      "六语种预览站，用 Ghost 的 Headline 主题，另有一个像素办公室回放记录下来的试运行。",
+      "编辑部——协调、调研、撰稿、校核——以 Docker 私有运行在编辑自己的电脑上；协调负责日常交接，编辑批准每一份发布结果。",
+      "目前还是原型，没有发表过任何稿件：试运行用的是虚构素材。"
+    ],
+    "tags": [
+      "Ghost",
+      "Docker",
+      "Multi-agent",
+      "Six languages"
+    ],
+    "poster": "/posters/tasmania-student-notes.jpg"
+  },
+  {
+    "slug": "payment-agent-lab",
+    "title": "AI-Native Payment & Agent Engineering Lab",
+    "kind": "AI agents",
+    "period": "2026.07 – 2026.08",
+    "description": "一个支付处理原型加一个只读的运维副驾，做出来是为了找智能体工作流会在哪里坏，而不是演示它在哪里好。",
+    "bullets": [
+      "设计了一个 FastAPI/SQLite 支付处理原型，把三个模拟渠道的同步、回调和轮询结果经适配器归一，配事件去重、审计日志和确定性状态机。",
+      "验证了一个只读的 RAG 运维副驾：三个工具，规划—开发—测试—复核的流程，77 个自动化测试、11 个记录在案的失败用例，加上人工批准和代码级安全闸。"
+    ],
+    "tags": [
+      "FastAPI",
+      "SQLite",
+      "Python",
+      "RAG",
+      "pytest",
+      "Agent workflows"
+    ],
+    "link": "https://github.com/Zeeekrom/payment-reconciliation-engine",
+    "shot": "/shots/payment-agent-lab.jpg",
+    "poster": "/posters/payment-agent-lab.jpg"
+  },
+  {
+    "slug": "ue5-financial-education",
+    "title": "Cyber Finance City",
+    "kind": "Interactive",
+    "period": "2025.10 – 2026.02",
+    "description": "模块化的 UE5 金融教育系统，有 AI 驱动的 NPC，后端是 FastAPI + RAG。",
+    "bullets": [
+      "做了一套模块化的 UE5 交互体验：AI 驱动的 NPC、可配置题库、计分流程、PBR 场景，以及可上 VR 的交互。",
+      "把 UE5 客户端接到 FastAPI、结构化题目数据、RAG 检索和大模型服务上，并验证了 API、集成和端到端的交互流程。"
+    ],
+    "tags": [
+      "Unreal Engine 5",
+      "Blueprint",
+      "C++",
+      "FastAPI",
+      "RAG",
+      "VR"
+    ],
+    "link": "https://github.com/Zeeekrom/cyber-finance-city",
+    "shot": "/shots/ue5-financial-education.jpg",
+    "demo": "https://zeeekrom.github.io/cyber-finance-city/",
+    "poster": "/posters/ue5-financial-education.jpg"
+  },
+  {
+    "slug": "little-red-sequel",
+    "title": "Little Red: Sequel",
+    "kind": "Interactive",
+    "period": "2023.12 – 2024.05",
+    "description": "独立开发的剧情向 3D 像素风虚幻引擎独立游戏 demo。",
+    "bullets": [
+      "做了一个剧情向的 3D 像素风虚幻引擎游戏 demo：暗黑奇幻世界观、以据点展开的探索、非线性任务、可交互对话和多结局。",
+      "把商店里的任务、对话和菜单系统改造并与自写 Blueprint 组合起来，并搭了 AIGC 辅助的美术生产流程，把 2D 像素画贴到 3D 场景上。"
+    ],
+    "tags": [
+      "Unreal Engine",
+      "Blueprint",
+      "Game Design",
+      "AIGC"
+    ],
+    "link": "https://github.com/Zeeekrom/little-red-sequel",
+    "shot": "/shots/little-red-sequel.jpg",
+    "poster": "/posters/little-red-sequel.jpg"
+  }
+]

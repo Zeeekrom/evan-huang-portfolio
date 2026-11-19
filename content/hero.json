@@ -1,0 +1,54 @@
+{
+  "statement": {
+    "lead": "A model that answers is not a system that runs.",
+    "pivot": "The distance between them is",
+    "swap": [
+      "permission.",
+      "review.",
+      "ownership.",
+      "accountability."
+    ]
+  },
+  "trajectory": [
+    "Tools for art teams",
+    "tools for developers",
+    "systems people actually run"
+  ],
+  "metrics": [
+    "Acting CTO of an AI platform",
+    "5 industry internships",
+    "2 startups",
+    "Studied in 3 countries",
+    "2 ACM papers"
+  ],
+  "now": [
+    {
+      "label": "Role",
+      "value": "Chief Technology Officer (Acting), AIA-Institute"
+    },
+    {
+      "label": "Study",
+      "value": "Master of Information Technology and Systems, University of Tasmania"
+    },
+    {
+      "label": "Building",
+      "value": "LiDAR perception for the UTAS Motorsport driverless car"
+    },
+    {
+      "label": "Based",
+      "value": "Hobart, Tasmania"
+    }
+  ],
+  "ctaPrimary": "See the work",
+  "ctaSecondary": "Get in touch",
+  "available": "Full-time over the UTAS summer break (26 Oct 2026 – 21 Feb 2027); part-time or casual during semester",
+  "shot": {
+    "src": "/shots/hobart.jpg",
+    "alt": "Hobart in daylight seen from the eastern shore: the city on the far bank, the Derwent, the Tasman Bridge, and kunanyi behind them",
+    "caption": "Hobart, Tasmania",
+    "credit": "jacobharrisau",
+    "creditUrl": "https://commons.wikimedia.org/wiki/File:Hobart,_kunanyi,_the_river_and_Tasman_Bridge_from_the_Rosny_Lookout.jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  }
+}

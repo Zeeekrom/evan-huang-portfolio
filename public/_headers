@@ -1,0 +1,23 @@
+# Cloudflare Pages reads this from the root of the build output; public/ is
+# copied there verbatim by the export.
+#
+# Only the two things Pages gets wrong on its own are set here. Pages already
+# serves every asset with `max-age=0, must-revalidate`, which is what HTML
+# wants, so there is no blanket rule: a `/*` rule would also have to win
+# against the one below it, and the order in which overlapping rules apply is
+# not something to bet a cache on.
+
+# Hashed filenames: the bytes under a given name can never change.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Next emits the share cards with no file extension, so Pages serves them as
+# application/octet-stream and no platform renders the preview. Same fault the
+# Azure deploy fixes by re-uploading them with a content type.
+/opengraph-image
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600
+
+/explore/opengraph-image
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600

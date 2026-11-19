@@ -1,0 +1,38 @@
+{
+  "heading": "Where I'm Heading",
+  "aside": "The page above is what exists. This is what I'm aiming at.",
+  "note": "Written as intent, not as experience — nothing here is a claim about work already done. The detail is still being filled in.",
+  "blocks": [
+    {
+      "heading": "What I want to do",
+      "line": "The roles this work is pointed at.",
+      "words": [
+        { "text": "Forward Deployed Engineer", "weight": 3 },
+        { "text": "Business Solution Developer", "weight": 3 },
+        { "text": "AI Agent Engineer", "weight": 2 },
+        { "text": "Solutions Architect", "weight": 2 },
+        { "text": "Technical Consultant", "weight": 2 },
+        { "text": "Data Platform Engineer", "weight": 1 },
+        { "text": "Applied AI Engineer", "weight": 1 },
+        { "text": "Systems Analyst", "weight": 1 },
+        { "text": "Delivery Engineer", "weight": 1 }
+      ]
+    },
+    {
+      "heading": "What I want to be good at",
+      "line": "The ground I want to be able to stand on.",
+      "words": [
+        { "text": "AI Agents", "weight": 3 },
+        { "text": "Multi-Agent Systems", "weight": 3 },
+        { "text": "Cybersecurity", "weight": 2 },
+        { "text": "Identity & Access", "weight": 2 },
+        { "text": "Evaluation", "weight": 2 },
+        { "text": "Retrieval", "weight": 1 },
+        { "text": "Observability", "weight": 1 },
+        { "text": "Data Engineering", "weight": 1 },
+        { "text": "Threat Modelling", "weight": 1 },
+        { "text": "Governance", "weight": 1 }
+      ]
+    }
+  ]
+}

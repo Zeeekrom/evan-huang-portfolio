@@ -1,0 +1,78 @@
+{
+  "notice": "",
+  "meta": {
+    "title": "Evan Huang — Applied AI Agent Engineer",
+    "description": "Portfolio of Evan Huang — five industry internships across AI workflows, game systems and developer tooling, now studying Information Technology and Systems in Hobart, Tasmania."
+  },
+  "brand": {
+    "name": "Evan Huang",
+    "kicker": "Applied AI Agent Engineer",
+    "location": "Hobart, Tasmania, Australia"
+  },
+  "nav": {
+    "menu": "Toggle menu"
+  },
+  "values": {
+    "heading": "My Values",
+    "aside": "How I actually work with people.",
+    "fallbackKeyword": "Value"
+  },
+  "publications": {
+    "heading": "Published",
+    "aside": "Co-authored, and the note says which part was mine.",
+    "read": "Read the paper"
+  },
+  "experience": {
+    "heading": "My Record",
+    "aside": "Where I have worked, and where I studied.",
+    "order": "Order",
+    "resume": "Newest first",
+    "journey": "Start at the beginning",
+    "work": "Work",
+    "workAside": "Open a row for what the work actually was.",
+    "education": "Education",
+    "educationAside": "A vocational diploma in China to a master's in Hobart — four institutions, two countries, two languages of instruction.",
+    "modes": {
+      "resume": "Resume",
+      "journey": "Journey"
+    }
+  },
+  "projects": {
+    "heading": "What I'm Building",
+    "aside": "Drag them around. Tap one to open it.",
+    "all": "All",
+    "hint": "Go ahead, make a mess",
+    "kinds": {
+      "AI agents": "AI agents",
+      "Data": "Data",
+      "Interactive": "Interactive",
+      "Tooling": "Tooling"
+    },
+    "tidy": "Tidy"
+  },
+  "card": {
+    "flip": "Turn it over ↻",
+    "unflip": "Show the front ↺",
+    "live": "Live",
+    "repo": "GitHub",
+    "close": "Close",
+    "peek": "Flip",
+    "back": "Back"
+  },
+  "footer": {
+    "explore": "Explore the canvas version"
+  },
+  "contact": {
+    "resume": "Résumé (LinkedIn)"
+  },
+  "status": {
+    "current": "Current",
+    "completed": "Completed",
+    "incoming": "Incoming — not started",
+    "onboarding": "Onboarding — not yet contributing"
+  },
+  "origin": {
+    "practice": "From my own work",
+    "learned": "Picked up in Tasmania's tech community"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "notice": "这一页和英文版是同一份内容，只是语言不同。可漫游的画布和会讲解的语音向导目前只有英文版。",
+  "meta": {
+    "title": "黄宇翔 — 应用 AI 智能体工程师",
+    "description": "黄宇翔（Evan Huang）的作品集：五段企业实习，覆盖 AI 工作流、游戏系统和开发者工具，现于澳大利亚霍巴特攻读信息技术与系统硕士。"
+  },
+  "brand": {
+    "name": "黄宇翔",
+    "kicker": "应用 AI 智能体工程师",
+    "location": "澳大利亚 塔斯马尼亚 霍巴特"
+  },
+  "nav": {
+    "menu": "展开或收起菜单"
+  },
+  "values": {
+    "heading": "我的价值观",
+    "aside": "我实际上是怎么和人一起工作的。",
+    "fallbackKeyword": "价值观"
+  },
+  "publications": {
+    "heading": "发表",
+    "aside": "都是合作完成的，备注里写明哪一部分是我做的。",
+    "read": "读论文"
+  },
+  "experience": {
+    "heading": "我的履历",
+    "aside": "我在哪儿工作过，在哪儿念的书。",
+    "order": "排序",
+    "resume": "最新在前",
+    "journey": "从头开始看",
+    "work": "工作经历",
+    "workAside": "点开一行，看这份工作到底是什么。",
+    "education": "教育经历",
+    "educationAside": "从中国的高职文凭读到霍巴特的硕士——四所学校，两个国家，两种授课语言。",
+    "modes": {
+      "resume": "简历",
+      "journey": "历程"
+    }
+  },
+  "projects": {
+    "heading": "我在做什么",
+    "aside": "可以拖动。点一张就能打开。",
+    "all": "全部",
+    "hint": "随便弄乱没关系",
+    "kinds": {
+      "AI agents": "AI 智能体",
+      "Data": "数据",
+      "Interactive": "交互",
+      "Tooling": "工具"
+    },
+    "tidy": "整理"
+  },
+  "card": {
+    "flip": "翻到背面 ↻",
+    "unflip": "翻回正面 ↺",
+    "live": "打开",
+    "repo": "GitHub",
+    "close": "关闭",
+    "peek": "翻面",
+    "back": "返回"
+  },
+  "footer": {
+    "explore": "打开画布版本（英文）"
+  },
+  "contact": {
+    "resume": "简历（领英）"
+  },
+  "status": {
+    "current": "进行中",
+    "completed": "已完成",
+    "incoming": "即将开始 — 尚未开始",
+    "onboarding": "入职中 — 尚未开始贡献"
+  },
+  "origin": {
+    "practice": "来自我自己的工作",
+    "learned": "在塔州技术社区学到的"
+  }
+}

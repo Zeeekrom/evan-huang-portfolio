@@ -1,0 +1,95 @@
+{
+  "heading": "About Me",
+  "aside": "How I got here, and what I am useful for.",
+  "portrait": {
+    "src": "/shots/avatar.jpg",
+    "alt": "Evan Huang's avatar"
+  },
+  "lead": "I build and test software other people have to rely on: IT, data and AI systems.",
+  "paragraphs": [
+    "I'm finishing a Master of Information Technology and Systems at the University of Tasmania. My experience covers AI agent engineering, data and business analytics, interactive and simulation technology, and web development: four paid full-time internships, two startups I co-founded, and an IT internship in Australia now.",
+    "At an AI developer-tools company I did AI agent development, integrating and testing AI coding assistants in a Cursor-style IDE — the hard part was the prompt, the context and the tests, not the model. At Tencent, one of the world's largest technology and gaming companies, I analysed gameplay data and prototyped game logic for Honor of Kings; before that I built tools and content pipelines for art teams at Perfect World and Lilith Games.",
+    "I co-founded an augmented-reality company planning location-based AR games for shopping centres and tourist sites, and led the AI content side up to a seed-round plan. Later I co-founded a live-streaming media startup, where I ran recruitment and onboarding for a team of 20 — screening 300+ people taught me to write a requirement people can actually answer.",
+    "I volunteer the same way I work. At Glenorchy Library I give one-to-one digital help — the cheapest usability testing there is. At children's STEAMM workshops in Rokeby I test the robots and iPads first, then hand the children their own Blockly errors to debug. I'm also on the Hospitals South consumer register. Two more start in 2027: youth mentoring at Hobart High School through Raise, and local sponsorship for the Mother's Day Classic.",
+    "Right now I'm acting CTO at AIA-Institute, building an AI platform for Australian organisations; it is pre-release, so there is nothing more about it here. Alongside it I run the IT systems work at Strategy&Ops Consultancy and do LiDAR perception with UTAS Motorsport. Everything on this page comes from one belief: a model that can answer a question is not yet a system an organisation can run.",
+    "I'm open to graduate and junior roles, part-time work, placements and internships in Tasmania, in software development, data and business analysis, or interactive and simulation technology. If any of this is useful to you, I'd be glad to talk."
+  ],
+  "logos": {
+    "employers": [
+      {
+        "org": "AIA-Institute",
+        "src": "/logos/aia-institute.png",
+        "alt": "AIA-Institute"
+      },
+      {
+        "org": "Strategy&Ops Consultancy",
+        "src": "/logos/strategy-and-ops.png",
+        "alt": "Strategy&Ops Consultancy"
+      },
+      {
+        "org": "Tencent",
+        "src": "/logos/tencent.png",
+        "alt": "Tencent"
+      },
+      {
+        "org": "Perfect World",
+        "src": "/logos/perfect-world.png",
+        "alt": "Perfect World"
+      },
+      {
+        "org": "Lilith Games",
+        "src": "/logos/lilith-games.png",
+        "alt": "Lilith Games"
+      }
+    ],
+    "community": [
+      {
+        "org": "Libraries Tasmania",
+        "src": "/logos/libraries-tasmania.png",
+        "alt": "Libraries Tasmania"
+      },
+      {
+        "org": "Tasmanian Health Service",
+        "src": "/logos/tasmanian-health.svg",
+        "alt": "Tasmanian Health Service"
+      },
+      {
+        "org": "Raise Foundation",
+        "src": "/logos/raise.svg",
+        "alt": "Raise Foundation"
+      },
+      {
+        "org": "Mother's Day Classic Foundation",
+        "src": "/logos/mothers-day-classic.png",
+        "alt": "Mother's Day Classic"
+      },
+      {
+        "org": "UTAS Student Ambassador",
+        "src": "/logos/utas.svg",
+        "alt": "University of Tasmania — Student Ambassador"
+      }
+    ]
+  },
+  "facts": [
+    {
+      "label": "5",
+      "value": "internships"
+    },
+    {
+      "label": "4",
+      "value": "volunteer roles"
+    },
+    {
+      "label": "3",
+      "value": "countries"
+    },
+    {
+      "label": "2",
+      "value": "startups"
+    },
+    {
+      "label": "1",
+      "value": "of me"
+    }
+  ]
+}

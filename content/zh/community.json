@@ -1,0 +1,94 @@
+[
+  {
+    "id": "inspired-mind-lab",
+    "org": "Inspired Mind Lab",
+    "role": "STEAMM 工作坊志愿者",
+    "period": "2026 – 至今",
+    "status": "current",
+    "field": "教育",
+    "location": "塔州 Rokeby",
+    "bullets": [
+      "为两场儿童 STEAMM 工作坊布置并测试 Dash 机器人和 iPad，在每场开始前修掉蓝牙、应用和设备故障，然后带 6 到 12 岁的孩子做机器人移动和 Blockly 调试——把出错交还给他们自己改，而不是替他们改好代码——并把技术观察写进工作坊复盘。"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "utas-motorsport",
+    "org": "UTAS Motorsport",
+    "role": "激光雷达与自主系统贡献者",
+    "period": "2026.07 – 至今",
+    "status": "current",
+    "field": "科技",
+    "location": "塔州霍巴特",
+    "bullets": [
+      "一个多学科的学生工程团队，用 Python、ROS 2、CARLA、RViz 和激光雷达测试自动驾驶感知与仿真流程。"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "libraries-tasmania",
+    "org": "Libraries Tasmania — Glenorchy Library",
+    "role": "数字导师",
+    "period": "2026.08 – 至今",
+    "status": "current",
+    "field": "教育",
+    "location": "塔州 Glenorchy",
+    "bullets": [
+      "提供一对一的数字包容支持，带社区成员完成日常的技术操作，按每个人的情况调整讲法，帮他们建立独立使用数字服务的信心。"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "utas-student-ambassador",
+    "org": "University of Tasmania",
+    "role": "学生社交媒体大使",
+    "period": "2027 起",
+    "status": "incoming",
+    "field": "教育",
+    "location": "塔州霍巴特",
+    "bullets": [
+      "将为学校社交媒体制作学生生活的照片和视频，并在中学、开放日和社区活动中向准备报考的学生介绍 UTAS。"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "raise-foundation",
+    "org": "Raise Foundation",
+    "role": "青少年导师志愿者",
+    "period": "2027.04 起",
+    "status": "incoming",
+    "field": "教育",
+    "location": "塔州 Hobart High School",
+    "bullets": [
+      "入选并完成 Raise 校内导师项目的培训；2026 年 10 月完成导师培训，内容包括青少年安全与上报、年轻人真正需要导师给什么，以及实操练习。一对一的结构化辅导从 2027 年开始。"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "mothers-day-classic",
+    "org": "Mother's Day Classic Foundation",
+    "role": "本地赞助负责人",
+    "period": "2027 起",
+    "status": "incoming",
+    "field": "公益筹款",
+    "location": "塔斯马尼亚",
+    "bullets": [
+      "将在霍巴特、朗塞斯顿以及整个塔州拓展本地企业赞助和实物支持，该活动为乳腺癌和卵巢癌研究筹款。"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "hospitals-south",
+    "org": "Tasmanian Health Service — Hospitals South",
+    "role": "消费者代表（名册）",
+    "period": "2026.08 – 至今",
+    "status": "onboarding",
+    "field": "医疗",
+    "location": "塔州霍巴特",
+    "bullets": [
+      "入选 Hospitals South 消费者代表名册，有机会参与服务规划、质量改进、文件与政策审阅，以及委员会或评审小组。",
+      "2026 年 9 月与消费者参与团队会面，谈了名册、患者导引和健康素养。"
+    ],
+    "evidence": []
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "org": "AIA-Institute",
+    "role": "代理首席技术官",
+    "period": "2026 – 至今",
+    "seq": 8,
+    "type": "Remote, part-time",
+    "bullets": [
+      "主导为澳大利亚机构打造的一个 AI 平台的技术设计与实现，与 CEO 和联合创始人一起推进。",
+      "平台尚未发布，因此这里不写细节。"
+    ],
+    "badge": "早期 AI 平台",
+    "metric": "一个未发布 AI 平台的技术负责人"
+  },
+  {
+    "org": "Strategy&Ops Consultancy",
+    "role": "IT 系统实习生",
+    "period": "2026",
+    "seq": 7,
+    "type": "Remote, part-time",
+    "bullets": [
+      "在 WordPress 上重做并上线了公司的 Net-Zero Global Network 页面：一个可搜索、可筛选的 18 家成员机构目录，带自动轮播，由一个经过测试的原型做成。",
+      "在变更控制下维护 WordPress 站点和 Tutor LMS——预发布测试、审批环节、共享变更日志、桌面和移动端的上线核对——并重建了首页的主视觉轮播。",
+      "审查了 300 多个公开页面和 20 门课程 84 节课里嵌入的视频，并修正了 55 节视频课的播放时长。"
+    ],
+    "badge": "战略与运营咨询公司",
+    "metric": "上线 18 家成员机构目录 · 审查 300+ 页面与 84 节课程"
+  },
+  {
+    "org": "Qingqiu Technology Co., Ltd.",
+    "role": "软件工程实习生",
+    "period": "2025 – 2026",
+    "seq": 6,
+    "type": "Full-time",
+    "bullets": [
+      "为一家独立游戏工作室开发了一个 Cursor 式的 AI 编码 IDE。",
+      "把 OpenAI Codex 和 Anthropic Claude 接进开发者工作流，编写系统提示词、少样本示例，以及上下文管理和模型交互逻辑。",
+      "用 JavaScript/Node.js 实现上下文处理和 Web 流程功能，并测试了多轮对话、提示词行为、流程逻辑和生成的代码。"
+    ],
+    "location": "中国",
+    "badge": "AI 开发者工具初创公司",
+    "metric": "一个 Cursor 式的 AI 编码 IDE · 把 Codex 和 Claude 接进开发流程"
+  },
+  {
+    "org": "Tencent",
+    "role": "游戏系统技术实习生",
+    "period": "2025",
+    "seq": 5,
+    "type": "Full-time",
+    "bullets": [
+      "分析胜率、选取率、技能收益、玩家反馈和后台遥测，支撑《王者荣耀》的玩法平衡与参数调整。",
+      "在 Excel 和内部仿真工具里建模并迭代技能配置与数值参数，包括伤害、治疗、冷却、法力消耗、移动衰减和效果叠加。",
+      "用 Lua 做玩法模块的原型和调试，并与工程师一起做状态机重构、交互验证、多人测试，以及特效、音效和动画的同步。"
+    ],
+    "location": "中国",
+    "badge": "全球最大的游戏公司",
+    "metric": "读遥测数据支撑《王者荣耀》的平衡调整"
+  },
+  {
+    "org": "Perfect World Co., Ltd.",
+    "role": "AI 工作流工程实习生",
+    "period": "2023 – 2024",
+    "seq": 3,
+    "type": "Full-time",
+    "bullets": [
+      "为一款国际发行的游戏建设并维护 2D/3D 素材数据集，收集、标注角色和道具并打风格标签。",
+      "用 Stable Diffusion 和 ComfyUI 训练并调优 LoRA 模型，并参与经 Jenkins 的 Python/Java/C++ 自动化、Unity 素材接入、技术文档和故障排查。"
+    ],
+    "location": "中国",
+    "badge": "上市游戏发行商",
+    "metric": "LoRA 微调 · 为一款国际发行产品整理 2D/3D 数据集"
+  },
+  {
+    "org": "Lilith Games",
+    "role": "AI 工作流工程实习生",
+    "period": "2023",
+    "seq": 1,
+    "type": "Full-time",
+    "bullets": [
+      "用 Python 和 C# 自动化 Unity 的批量操作，理顺素材导入、分类、压缩和打标，减少重复的手工处理。",
+      "为 AFK Journey 和 Rise of Kingdoms 搭建 AIGC 流水线：数据集预处理、LoRA 微调，以及 Stable Diffusion/ComfyUI 与五种 DCC 工具（Blender、Maya、Houdini、3ds Max、Cinema 4D）的集成；为它们写了文档，并培训了不懂技术的美术团队。"
+    ],
+    "location": "中国",
+    "badge": "AFK Journey · Rise of Kingdoms",
+    "metric": "全球长线产品的 AIGC 流水线 · 面向非技术美术团队的培训"
+  }
+]

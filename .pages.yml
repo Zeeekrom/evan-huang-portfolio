@@ -1,0 +1,372 @@
+# Pages CMS — https://pagescms.org
+#
+# A form-based editor over content/*.json. It commits to this repository like
+# any other change, so CI still validates and deploys, and a bad edit is still
+# one `git revert` away.
+#
+# To use it: sign in at app.pagescms.org with GitHub, grant access to this
+# repository, and it reads this file.
+#
+# Keep the fields here in step with the interfaces in src/data/content.ts —
+# those are what actually enforce the shape at build time. This file only
+# decides what the form looks like.
+#
+# The site is English only. A Chinese character in any field fails the build.
+
+media:
+  input: public
+  output: /
+
+content:
+  # ---------------------------------------------------------------- projects
+  - name: projects
+    label: Projects
+    path: content/projects.json
+    type: file
+    list: true
+    fields:
+      - name: slug
+        label: "Slug (unique; lowercase letters, digits and hyphens)"
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: "Lowercase letters, digits and hyphens only"
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: period
+        label: "Period (e.g. Mar 2025 – Jun 2025)"
+        type: string
+        required: true
+      - name: description
+        label: One-sentence description
+        type: text
+        required: true
+      - name: bullets
+        label: "Bullets (every two make a slide; three to five read best)"
+        type: text
+        list: true
+      - name: tags
+        label: Stack
+        type: string
+        list: true
+      - name: link
+        label: "Repository or demo link (optional)"
+        type: string
+      - name: featured
+        label: Render this project in the dark palette
+        type: boolean
+
+  # ------------------------------------------------------------- experience
+  - name: internships
+    label: Internships
+    path: content/internships.json
+    type: file
+    list: true
+    fields: &experience_fields
+      - name: org
+        label: Company or organisation
+        type: string
+        required: true
+      - name: role
+        label: Role
+        type: string
+        required: true
+      - name: period
+        label: Period
+        type: string
+        required: true
+      - name: location
+        label: "Location (optional; no slide shows it yet)"
+        type: string
+      - name: type
+        label: "Kind of work (e.g. Full-time)"
+        type: string
+      - name: bullets
+        label: "What you did (every two make a slide)"
+        type: text
+        list: true
+
+  - name: startups
+    label: Ventures
+    path: content/startups.json
+    type: file
+    list: true
+    fields: *experience_fields
+
+  - name: internship-highlights
+    label: "Internship highlights (the results on the summary card)"
+    path: content/internship-highlights.json
+    type: file
+    list: true
+    fields:
+      - name: org
+        label: "Company, exactly as in internships.json"
+        type: string
+        required: true
+      - name: bullet
+        label: "Which bullet, counting from 0"
+        type: number
+        required: true
+
+  # -------------------------------------------------------------- community
+  - name: community
+    label: Community
+    path: content/community.json
+    type: file
+    list: true
+    fields:
+      - name: id
+        label: "Id (unique; lowercase letters, digits and hyphens)"
+        type: string
+        required: true
+      - name: org
+        label: Organisation
+        type: string
+        required: true
+      - name: role
+        label: Role
+        type: string
+        required: true
+      - name: period
+        label: Period
+        type: string
+        required: true
+      - name: status
+        label: "Status: current, completed, incoming or onboarding"
+        type: string
+        required: true
+      - name: field
+        label: "Field (e.g. Education, Health)"
+        type: string
+      - name: location
+        label: Location
+        type: string
+      - name: bullets
+        label: What the role is
+        type: text
+        list: true
+      - name: evidence
+        label: "Slide ids that show the work (optional)"
+        type: string
+        list: true
+
+  # -------------------------------------------------------------- positions
+  - name: positions
+    label: How I work with AI
+    path: content/positions.json
+    type: file
+    list: true
+    fields:
+      - name: id
+        label: "Id (unique; lowercase letters, digits and hyphens)"
+        type: string
+        required: true
+      - name: label
+        label: "Label (forty characters at most)"
+        type: string
+        required: true
+      - name: claim
+        label: The position
+        type: text
+        required: true
+      - name: origin
+        label: "Origin: practice (own work) or learned (from someone else)"
+        type: string
+        required: true
+      - name: source
+        label: "Where the wording came from (never shown)"
+        type: string
+      - name: evidence
+        label: "Slide ids that show it (at least one)"
+        type: string
+        list: true
+        required: true
+
+  # ------------------------------------------------------------------ about
+  - name: about
+    label: "About (the guide's only source on who Evan is)"
+    path: content/about.json
+    type: file
+    fields:
+      - name: heading
+        label: Heading
+        type: string
+      - name: paragraphs
+        label: "Paragraphs (the body of the who-am-i slide)"
+        type: text
+        list: true
+      - name: facts
+        label: "Quick facts (classic homepage only; the guide cannot read these)"
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: value
+            label: Value
+            type: string
+
+  # ------------------------------------------------------------ publications
+  - name: publications
+    label: Publications
+    path: content/publications.json
+    type: file
+    list: true
+    fields:
+      - name: title
+        label: Title
+        type: text
+        required: true
+      - name: venue
+        label: Venue
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: string
+        required: true
+      - name: note
+        label: "Note (the body of the paper's slide)"
+        type: text
+        required: true
+
+  # -------------------------------------------------------------- education
+  - name: education
+    label: Education
+    path: content/education.json
+    type: file
+    list: true
+    fields:
+      - name: degree
+        label: Degree
+        type: string
+        required: true
+      - name: school
+        label: School
+        type: string
+        required: true
+      - name: period
+        label: Period
+        type: string
+        required: true
+      - name: detail
+        label: "Detail (e.g. GPA 3.77/4.00 · Rank 1/206)"
+        type: string
+
+  # ----------------------------------------------------------------- skills
+  - name: skills
+    label: Skill groups
+    path: content/skills.json
+    type: file
+    list: true
+    fields:
+      - name: title
+        label: Group name
+        type: string
+        required: true
+      - name: items
+        label: Technology names
+        type: string
+        list: true
+
+  # ------------------------------------------------------------------- site
+  - name: site
+    label: "Site (domain, email, links, résumé)"
+    path: content/site.json
+    type: file
+    fields:
+      - name: url
+        label: "Site address (absolute URL)"
+        type: string
+        required: true
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: legalName
+        label: Legal name
+        type: string
+        required: true
+      - name: location
+        label: Location
+        type: string
+      - name: email
+        label: Email
+        type: string
+        required: true
+      - name: linkedin
+        label: LinkedIn
+        type: string
+      - name: github
+        label: GitHub
+        type: string
+      - name: resumeFile
+        label: "Résumé path (under public/)"
+        type: string
+
+  # -------------------------------------------------------- classic homepage
+  - name: hero
+    label: "Hero (classic homepage / only; not on the canvas)"
+    path: content/hero.json
+    type: file
+    fields:
+      - name: greeting
+        label: Greeting
+        type: string
+      - name: role
+        label: Role
+        type: text
+      - name: tagline
+        label: Tagline
+        type: text
+      - name: ctaPrimary
+        label: Primary button
+        type: string
+      - name: ctaSecondary
+        label: Secondary button
+        type: string
+      - name: available
+        label: Availability
+        type: text
+
+  - name: contact
+    label: "Contact (the tour's last stop)"
+    path: content/contact.json
+    type: file
+    fields:
+      - name: heading
+        label: Heading
+        type: string
+        required: true
+      - name: subheading
+        label: Subheading
+        type: text
+        required: true
+
+  - name: nav
+    label: "Navigation (classic homepage only)"
+    path: content/nav.json
+    type: file
+    list: true
+    fields:
+      - name: id
+        label: Section id
+        type: string
+        required: true
+      - name: label
+        label: Label
+        type: string
+        required: true
+
+  - name: footer
+    label: "Footer (classic homepage only)"
+    path: content/footer.json
+    type: file
+    fields:
+      - name: builtWith
+        label: Footer text
+        type: text

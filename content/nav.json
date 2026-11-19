@@ -1,0 +1,34 @@
+[
+  {
+    "id": "home",
+    "label": "Top"
+  },
+  {
+    "id": "about",
+    "label": "About"
+  },
+  {
+    "id": "skills",
+    "label": "Strengths"
+  },
+  {
+    "id": "projects",
+    "label": "Building"
+  },
+  {
+    "id": "cases",
+    "label": "Cases"
+  },
+  {
+    "id": "values",
+    "label": "Values"
+  },
+  {
+    "id": "experience",
+    "label": "Record"
+  },
+  {
+    "id": "publications",
+    "label": "Published"
+  }
+]

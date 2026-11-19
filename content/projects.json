@@ -1,0 +1,175 @@
+[
+  {
+    "slug": "rivulet-localops",
+    "title": "Rivulet LocalOps",
+    "kind": "AI agents",
+    "period": "Jul 2026 – Present",
+    "featured": true,
+    "link": "https://github.com/Zeeekrom/rivulet-localops",
+    "demo": "https://zeeekrom.github.io/rivulet-localops/film/",
+    "shot": "/shots/rivulet.jpg",
+    "description": "Turns a written service policy into decisions that can be executed, checked and traced to a named owner. The reference scenario is a council handling waste and litter requests.",
+    "bullets": [
+      "AI-assisted and policy-gated: a model reads the request and suggests type and urgency, but the written policy decides what may happen — it may raise urgency and never lower it — and a named person makes the final call.",
+      "Every request is diagnosed, tested against the approved policy, recorded in a tamper-evident ledger and reviewed by a second person.",
+      "An independent prototype, not an official council service: no real resident requests, and no writes to any real council system."
+    ],
+    "tags": [
+      "Python 3.12",
+      "Claude on Bedrock",
+      "Policy gating",
+      "Audit ledger"
+    ],
+    "poster": "/posters/rivulet-localops.jpg"
+  },
+  {
+    "slug": "lifeops-atlas",
+    "title": "LifeOps Atlas",
+    "kind": "Tooling",
+    "period": "Jul 2026 – Present",
+    "link": "https://github.com/Zeeekrom/lifeops-atlas-showcase",
+    "demo": "https://zeeekrom.github.io/lifeops-atlas-showcase/",
+    "shot": "/shots/lifeops-atlas.jpg",
+    "description": "A single-user operations system that brings tasks, relationships, event research and career preparation into one evidence-backed workspace.",
+    "bullets": [
+      "Durable records live in PostgreSQL with append-only corrections and source evidence; the AI works only from bounded, traceable input.",
+      "Node.js 24, TypeScript, Fastify 5, Zod, PostgreSQL 17 and Docker Compose. The public edition is a sanitised walkthrough built from synthetic records."
+    ],
+    "tags": [
+      "TypeScript",
+      "Fastify",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "poster": "/posters/lifeops-atlas.jpg"
+  },
+  {
+    "slug": "agrisentry",
+    "title": "AgriSentry",
+    "kind": "Data",
+    "period": "Jul 2026 – Present",
+    "link": "https://github.com/Zeeekrom/agrisentry",
+    "demo": "https://zeeekrom.github.io/agrisentry/",
+    "shot": "/shots/agrisentry.jpg",
+    "description": "A configurable farm-monitoring system on the Microsoft Power Platform: simulated weather and sensor data become per-crop risk alerts.",
+    "bullets": [
+      "A person approves every alert before anything happens, with an immutable audit trail behind it and a Power BI dashboard over it.",
+      "Power Apps, Dataverse, Power Automate and Power BI with an Azure Functions rule engine. Synthetic data; the application source stays private."
+    ],
+    "tags": [
+      "Power Platform",
+      "Power BI",
+      "Azure Functions",
+      "Dataverse"
+    ],
+    "poster": "/posters/agrisentry.jpg"
+  },
+  {
+    "slug": "evan-h-portfolio",
+    "title": "Evan.H Portfolio",
+    "kind": "Tooling",
+    "period": "Jul 2026 – Present",
+    "link": "https://github.com/Zeeekrom/evan-huang-portfolio",
+    "demo": "https://evanh.dev/",
+    "shot": "/shots/portfolio.jpg",
+    "description": "This site. A portfolio has two readers — someone skimming for facts, and someone who wants to look around — so it is built twice over one set of content.",
+    "bullets": [
+      "Every word lives in content/*.json behind a typed loader that fails the build on a broken link, an invented status or a second language, with 104 tests behind it.",
+      "The same content renders as this page and as an explorable canvas deck with a voice guide that can only say what the slides say."
+    ],
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Azure Storage",
+      "GitHub Actions"
+    ],
+    "poster": "/posters/evan-h-portfolio.jpg"
+  },
+  {
+    "slug": "tasmania-student-notes",
+    "title": "Tasmania Student Notes",
+    "kind": "Tooling",
+    "period": "Jul 2026 – Present",
+    "link": "https://github.com/Zeeekrom/tasmania-student-notes-showcase",
+    "demo": "https://tas-stu-notes-preview.azurewebsites.net/",
+    "shot": "/shots/tasmania-student-notes.jpg",
+    "description": "An independent, student-led publication for Tasmania in six languages, with a newsroom of four AI roles where a human editor approves every final result.",
+    "bullets": [
+      "A six-language preview site on Ghost's Headline theme, with a pixel office that replays recorded pilot runs.",
+      "The newsroom — Coordinator, Researcher, Writer and Checker — runs privately in Docker on the editor's own computer; the Coordinator handles routine hand-offs and the editor approves every published result.",
+      "A prototype with no published stories yet: the pilot runs used fictional material."
+    ],
+    "tags": [
+      "Ghost",
+      "Docker",
+      "Multi-agent",
+      "Six languages"
+    ],
+    "poster": "/posters/tasmania-student-notes.jpg"
+  },
+  {
+    "slug": "payment-agent-lab",
+    "title": "AI-Native Payment & Agent Engineering Lab",
+    "kind": "AI agents",
+    "period": "Jul 2026 – Aug 2026",
+    "description": "A payment-processing prototype and a read-only operations copilot, built to find where agent workflows break rather than to demo where they work.",
+    "bullets": [
+      "Designed a FastAPI/SQLite payment-processing prototype normalising synchronous, webhook and polling results from three simulated channels through adapters, event de-duplication, audit logging and a deterministic state machine.",
+      "Verified a read-only RAG operations copilot with three tools and a Planner–Developer–Tester–Reviewer process, using 77 automated tests, 11 documented failure cases, human approval and code-level safety gates."
+    ],
+    "tags": [
+      "FastAPI",
+      "SQLite",
+      "Python",
+      "RAG",
+      "pytest",
+      "Agent workflows"
+    ],
+    "link": "https://github.com/Zeeekrom/payment-reconciliation-engine",
+    "shot": "/shots/payment-agent-lab.jpg",
+    "poster": "/posters/payment-agent-lab.jpg"
+  },
+  {
+    "slug": "ue5-financial-education",
+    "title": "Cyber Finance City",
+    "kind": "Interactive",
+    "period": "Oct 2025 – Feb 2026",
+    "description": "Modular UE5 financial-education system with AI-driven NPCs and a FastAPI + RAG backend.",
+    "bullets": [
+      "Created a modular UE5 interactive experience with AI-driven NPCs, configurable questions, scoring workflows, PBR environments, and VR-ready interactions.",
+      "Connected the UE5 client to FastAPI, structured question data, RAG retrieval, and LLM services, then validated API, integration, and end-to-end interaction workflows."
+    ],
+    "tags": [
+      "Unreal Engine 5",
+      "Blueprint",
+      "C++",
+      "FastAPI",
+      "RAG",
+      "VR"
+    ],
+    "link": "https://github.com/Zeeekrom/cyber-finance-city",
+    "shot": "/shots/ue5-financial-education.jpg",
+    "demo": "https://zeeekrom.github.io/cyber-finance-city/",
+    "poster": "/posters/ue5-financial-education.jpg"
+  },
+  {
+    "slug": "little-red-sequel",
+    "title": "Little Red: Sequel",
+    "kind": "Interactive",
+    "period": "Dec 2023 – May 2024",
+    "description": "Independently developed story-driven 3D pixel-style Unreal Engine indie game demo.",
+    "bullets": [
+      "Developed a story-driven 3D pixel-style Unreal Engine game demo featuring dark-fantasy worldbuilding, hub-based exploration, nonlinear quests, interactive dialogue, and multiple endings.",
+      "Modified and combined Marketplace quest, dialogue and menu systems with custom Blueprints, and built the AIGC-assisted asset production that put 2D pixel art onto 3D environments."
+    ],
+    "tags": [
+      "Unreal Engine",
+      "Blueprint",
+      "Game Design",
+      "AIGC"
+    ],
+    "link": "https://github.com/Zeeekrom/little-red-sequel",
+    "shot": "/shots/little-red-sequel.jpg",
+    "poster": "/posters/little-red-sequel.jpg"
+  }
+]

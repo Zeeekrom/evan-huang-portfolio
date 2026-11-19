@@ -1,0 +1,77 @@
+{
+  "note": "Official sites for the proper nouns the page names. Every URL here was opened and checked before it was added; a name whose official site could not be reached is left out rather than guessed at. Longest name wins, so an entry may safely be a prefix of another.",
+  "links": [
+    {
+      "name": "AIA-Institute",
+      "url": "https://aia-institute.org/"
+    },
+    {
+      "name": "Strategy&Ops Consultancy",
+      "url": "https://strategyandops.net/"
+    },
+    {
+      "name": "University of Tasmania",
+      "url": "https://www.utas.edu.au/"
+    },
+    {
+      "name": "UTAS Student Ambassador",
+      "url": "https://www.utas.edu.au/uni-life/support-and-wellbeing/leadership-and-volunteering"
+    },
+    {
+      "name": "Saint Martin's University",
+      "url": "https://www.stmartin.edu/"
+    },
+    {
+      "name": "Tencent",
+      "url": "https://www.tencent.com/"
+    },
+    {
+      "name": "Perfect World",
+      "url": "https://www.pwrd.com/en/"
+    },
+    {
+      "name": "Lilith Games",
+      "url": "https://www.lilithgames.com/"
+    },
+    {
+      "name": "Honor of Kings",
+      "url": "https://play.google.com/store/apps/details?id=com.levelinfinite.sgameGlobal&hl=en&gl=AU"
+    },
+    {
+      "name": "AFK Journey",
+      "url": "https://play.google.com/store/apps/details?id=com.farlightgames.igame.gp&hl=en&gl=AU"
+    },
+    {
+      "name": "Rise of Kingdoms",
+      "url": "https://play.google.com/store/apps/details?id=com.lilithgame.roc.gp&hl=en&gl=AU"
+    },
+    {
+      "name": "Mother's Day Classic Foundation",
+      "url": "https://www.mothersdayclassic.com.au/"
+    },
+    {
+      "name": "Mother's Day Classic",
+      "url": "https://www.mothersdayclassic.com.au/"
+    },
+    {
+      "name": "Raise Foundation",
+      "url": "https://raise.org.au/"
+    },
+    {
+      "name": "Libraries Tasmania",
+      "url": "https://libraries.tas.gov.au/"
+    },
+    {
+      "name": "Tasmanian Health Service",
+      "url": "https://www.health.tas.gov.au/"
+    },
+    {
+      "name": "Glenorchy Library",
+      "url": "https://libraries.tas.gov.au/"
+    },
+    {
+      "name": "Hospitals South",
+      "url": "https://www.health.tas.gov.au/"
+    }
+  ]
+}

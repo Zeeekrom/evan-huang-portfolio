@@ -1,0 +1,28 @@
+[
+  {
+    "org": "Malou Media Ltd (Startup)",
+    "role": "Co-Founder & Recruitment Manager",
+    "period": "2024 – 2025",
+    "seq": 4,
+    "type": "Part-time, Remote",
+    "bullets": [
+      "Independently ran recruitment, onboarding and people operations for a 20-person company spanning content planning, livestreaming and operations.",
+      "Screened 300+ candidates and standardised the end-to-end recruitment process, using regular reporting to track candidate sources, conversion rates, and time-to-hire."
+    ],
+    "badge": "Startup · 20 people",
+    "metric": "300+ candidates screened · recruitment run single-handed for 20 people"
+  },
+  {
+    "org": "AR Platform Ltd (Startup)",
+    "role": "Co-Founder & AIGC Technical Lead",
+    "period": "2023 – 2024",
+    "seq": 2,
+    "type": "Part-time, Remote",
+    "bullets": [
+      "Co-founded a 4–5 person AR content startup as AIGC lead and designed the AI content pipeline, from 2D concept art to 3D assets, and the interaction-flow and spatial-mapping concepts for the location-based multiplayer AR games in its seed-round business plan.",
+      "Coordinated with 20+ external stakeholders and prepared B2B use cases and commercial proposals for venue operators, including annual licensing, event marketing, and customer-engagement scenarios."
+    ],
+    "badge": "Startup · co-founded",
+    "metric": "4–5 person team · 20+ external stakeholders · a seed-round business plan"
+  }
+]

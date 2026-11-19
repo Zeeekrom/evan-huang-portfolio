@@ -1,0 +1,54 @@
+{
+  "statement": {
+    "lead": "能答对的模型，不等于能跑起来的系统。",
+    "pivot": "中间隔着的，是",
+    "swap": [
+      "权限",
+      "复核",
+      "归属",
+      "问责"
+    ]
+  },
+  "trajectory": [
+    "给美术团队做工具",
+    "给开发者做工具",
+    "做真有人在运行的系统"
+  ],
+  "metrics": [
+    "在一家 AI 平台做代理 CTO",
+    "5 段企业实习",
+    "2 家初创",
+    "在 3 个国家读过书",
+    "2 篇 ACM 论文"
+  ],
+  "now": [
+    {
+      "label": "职位",
+      "value": "AIA-Institute 代理 CTO（远程）"
+    },
+    {
+      "label": "在读",
+      "value": "塔斯马尼亚大学 信息技术与系统硕士"
+    },
+    {
+      "label": "在做",
+      "value": "UTAS Motorsport 无人方程式赛车的激光雷达感知"
+    },
+    {
+      "label": "坐标",
+      "value": "澳大利亚 塔斯马尼亚 霍巴特"
+    }
+  ],
+  "ctaPrimary": "看作品",
+  "ctaSecondary": "联系我",
+  "available": "UTAS 暑假期间可全职（2026 年 10 月 26 日 – 2027 年 2 月 21 日）；学期中可兼职或临时。",
+  "shot": {
+    "src": "/shots/hobart.jpg",
+    "alt": "白天从东岸看霍巴特：对岸的市区、德文特河、塔斯曼桥，以及它们背后的 kunanyi 山",
+    "caption": "澳大利亚 塔斯马尼亚 霍巴特",
+    "credit": "jacobharrisau",
+    "creditUrl": "https://commons.wikimedia.org/wiki/File:Hobart,_kunanyi,_the_river_and_Tasman_Bridge_from_the_Rosny_Lookout.jpg",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  }
+}

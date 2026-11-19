@@ -1,0 +1,87 @@
+[
+  {
+    "org": "AIA-Institute",
+    "role": "Chief Technology Officer (Acting)",
+    "period": "2026 – Present",
+    "seq": 8,
+    "type": "Remote, part-time",
+    "bullets": [
+      "Leading the technical design and build of an AI platform for Australian organisations, working with the CEO and co-founder.",
+      "The platform is pre-release, so there is no detail about it here."
+    ],
+    "badge": "Early-stage AI platform",
+    "metric": "Technical lead on a pre-release AI platform"
+  },
+  {
+    "org": "Strategy&Ops Consultancy",
+    "role": "IT Systems Intern",
+    "period": "2026",
+    "seq": 7,
+    "type": "Remote, part-time",
+    "bullets": [
+      "Redesigned and launched the company's Net-Zero Global Network page in WordPress: a searchable, filterable directory of 18 member organisations with an auto-rotating carousel, built from a tested prototype.",
+      "Maintained the WordPress site and Tutor LMS under change control — staging tests, approval steps, a shared change log, live checks on desktop and mobile — and rebuilt the homepage hero slider.",
+      "Audited the videos embedded across 300+ public pages and 84 lessons in 20 LMS courses, and fixed playback times on 55 video lessons."
+    ],
+    "badge": "Strategy and operations consultancy",
+    "metric": "18-member directory shipped · 300+ pages and 84 lessons audited"
+  },
+  {
+    "org": "Qingqiu Technology Co., Ltd.",
+    "role": "Software Engineer Intern",
+    "period": "2025 – 2026",
+    "seq": 6,
+    "type": "Full-time",
+    "bullets": [
+      "Developed a Cursor-style AI coding IDE for an indie game studio.",
+      "Integrated OpenAI Codex and Anthropic Claude into developer workflows, writing the system prompts, few-shot examples, and the context-management and model-interaction logic.",
+      "Built context-processing and web workflow features in JavaScript/Node.js, and tested multi-turn conversations, prompt behaviour, process logic and the generated code."
+    ],
+    "location": "China",
+    "badge": "AI developer-tooling startup",
+    "metric": "A Cursor-style AI coding IDE · Codex and Claude in the developer workflow"
+  },
+  {
+    "org": "Tencent",
+    "role": "Technical Game Systems Intern",
+    "period": "2025",
+    "seq": 5,
+    "type": "Full-time",
+    "bullets": [
+      "Analysed win rates, pick rates, skill effectiveness, player feedback and backend telemetry to support gameplay balancing and parameter adjustments in Honor of Kings.",
+      "Modelled and iterated skill configurations and numerical parameters in Excel and internal simulation tools, including damage, healing, cooldowns, mana costs, movement decay, and effect stacking.",
+      "Prototyped and debugged Lua gameplay modules and collaborated with engineers on state-machine restructuring, interaction validation, multiplayer testing, and VFX/SFX/animation synchronisation."
+    ],
+    "location": "China",
+    "badge": "World's largest games company",
+    "metric": "Telemetry read to support balancing on Honor of Kings"
+  },
+  {
+    "org": "Perfect World Co., Ltd.",
+    "role": "AI Workflow Engineering Intern",
+    "period": "2023 – 2024",
+    "seq": 3,
+    "type": "Full-time",
+    "bullets": [
+      "Built and maintained 2D/3D asset datasets for an internationally released game, collecting, annotating and style-tagging characters and props.",
+      "Trained and refined LoRA models with Stable Diffusion and ComfyUI, and collaborated on Python/Java/C++ automation via Jenkins, Unity asset integration, technical documentation, and troubleshooting."
+    ],
+    "location": "China",
+    "badge": "Listed games publisher",
+    "metric": "LoRA fine-tuning · 2D/3D dataset curation for an internationally released title"
+  },
+  {
+    "org": "Lilith Games",
+    "role": "AI Workflow Engineering Intern",
+    "period": "2023",
+    "seq": 1,
+    "type": "Full-time",
+    "bullets": [
+      "Automated Unity batch operations with Python and C#, streamlining asset import, classification, compression, and tagging while reducing repetitive manual processing.",
+      "Built AIGC pipelines for AFK Journey and Rise of Kingdoms: dataset preprocessing, LoRA fine-tuning, and Stable Diffusion/ComfyUI integration with five DCC tools (Blender, Maya, Houdini, 3ds Max, Cinema 4D); documented them and trained non-technical art teams."
+    ],
+    "location": "China",
+    "badge": "AFK Journey · Rise of Kingdoms",
+    "metric": "AIGC pipelines across global live-service titles · training for non-technical art teams"
+  }
+]

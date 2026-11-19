@@ -1,0 +1,34 @@
+[
+  {
+    "id": "home",
+    "label": "顶部"
+  },
+  {
+    "id": "about",
+    "label": "关于"
+  },
+  {
+    "id": "skills",
+    "label": "强项"
+  },
+  {
+    "id": "projects",
+    "label": "在做"
+  },
+  {
+    "id": "cases",
+    "label": "案例"
+  },
+  {
+    "id": "values",
+    "label": "价值观"
+  },
+  {
+    "id": "experience",
+    "label": "履历"
+  },
+  {
+    "id": "publications",
+    "label": "论文"
+  }
+]

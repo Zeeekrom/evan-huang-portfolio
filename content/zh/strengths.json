@@ -1,0 +1,133 @@
+{
+  "heading": "我擅长什么",
+  "aside": "选一个方向，面板会显示它实际用在了哪里。",
+  "spine": "我写过代码，在别人的机构里支撑过它，现在大部分时间花在系统和不得不运行它的人相接的地方。",
+  "stages": [
+    {
+      "label": "数据与 BI",
+      "lead": "得有人照着它做决定的数字。",
+      "rows": [
+        {
+          "label": "Tencent",
+          "text": "胜率、选取率、技能收益和后台遥测，读得足够细，以支撑一款在线游戏做平衡时用的参数。"
+        },
+        {
+          "label": "AgriSentry",
+          "text": "在 Power Platform 上把模拟的天气和传感器数据变成按作物划分的风险预警，不可改写的审计轨迹之上是一块 Power BI 看板。"
+        },
+        {
+          "label": "Malou Media",
+          "text": "筛了 300 多位候选人，并定期出报表跟踪候选人来源、转化率和到岗周期。"
+        }
+      ]
+    },
+    {
+      "label": "业务分析",
+      "lead": "没人写下来的那条需求。",
+      "rows": [
+        {
+          "label": "Strategy&Ops Consultancy",
+          "text": "一家战略与运营咨询公司的网站和学习管理系统，带预发布环境、变更控制和文档。"
+        },
+        {
+          "label": "Tasmania Student Notes",
+          "text": "一份六语种刊物，配一个由 AI 角色组成的编辑部，规格上写明每一份结果都要人类编辑批准才能发布。"
+        },
+        {
+          "label": "Malou Media",
+          "text": "一个人端到端地负责一家 20 人机构的招聘，覆盖内容、直播和运营三条线。"
+        }
+      ]
+    },
+    {
+      "label": "AI 与智能体",
+      "lead": "模型只要答对问题，工作流却得能安全地跑。",
+      "rows": [
+        {
+          "label": "Qingqiu Technology",
+          "text": "把 OpenAI Codex 和 Anthropic Claude 接进开发者工作流——系统提示词、少样本提示、上下文管理、模型交互逻辑——并用 Node.js 实现了 CLAW 的上下文处理和 Web 功能。"
+        },
+        {
+          "label": "Payment & Agent Lab",
+          "text": "一个 FastAPI/SQLite 支付原型和一个只读的运维副驾：把三个模拟渠道的结果归一，配事件去重、审计日志和确定性状态机。"
+        },
+        {
+          "label": "Perfect World · Lilith Games",
+          "text": "在全球长线运营的产品上做 AIGC 生产流水线——LoRA 微调、数据集整理，以及培训不懂技术的美术团队使用这些工具。"
+        }
+      ]
+    },
+    {
+      "label": "软件与 Web",
+      "lead": "我走了以后还得继续跑的东西。",
+      "rows": [
+        {
+          "label": "就是这个站",
+          "text": "Next.js 静态导出，配一层内容层：链接解析不了、状态是编的、第二种语言溜回来，构建都会失败。背后有 104 个测试。"
+        },
+        {
+          "label": "LifeOps Atlas",
+          "text": "Node.js 24、TypeScript、Fastify 5 和 PostgreSQL 17：一个权威数据库，更正只追加不覆盖，所以一次更正永远不会毁掉它更正的东西。"
+        },
+        {
+          "label": "Rivulet LocalOps",
+          "text": "把写下来的政策编译成一个决定必须通过的检查，每一步都记进可验篡改的账本，并由第二个人复核。"
+        }
+      ]
+    },
+    {
+      "label": "测试与支持",
+      "lead": "不体面的那一半，而决定系统能不能活下来的正是这一半。",
+      "rows": [
+        {
+          "label": "UTAS Motorsport",
+          "text": "多圈、多赛道、传感器故障和动态障碍测试：最终软件矩阵里 8/8 个场景、24/24 圈全部通过。"
+        },
+        {
+          "label": "Strategy&Ops Consultancy",
+          "text": "预发布环境、变更控制和文档，让一次改动在到达依赖这个系统的人之前先被复核。"
+        },
+        {
+          "label": "同学辅导",
+          "text": "在两门课上一对一帮一位非 IT 背景的同学——讲清概念、把要求拆成步骤，而不是把答案递过去。"
+        }
+      ]
+    },
+    {
+      "label": "交互技术",
+      "lead": "做给那些从来不会去看说明书的人。",
+      "rows": [
+        {
+          "label": "UE5 Financial Education",
+          "text": "模块化的虚幻引擎 5 金融教育体验，有 AI 驱动的 NPC，后端是 FastAPI + RAG。"
+        },
+        {
+          "label": "Little Red: Sequel",
+          "text": "独立开发的剧情向 3D 像素风虚幻引擎 demo，暗黑奇幻世界观，以据点展开的场景。"
+        },
+        {
+          "label": "Inspired Mind Lab",
+          "text": "为儿童 STEAMM 工作坊布置并测试机器人和平板，然后帮孩子们自己调试——这是了解一个界面对第一次使用它的人意味着什么的最快办法。"
+        }
+      ]
+    },
+    {
+      "label": "自动驾驶与仿真",
+      "lead": "必须敢信的感知。",
+      "rows": [
+        {
+          "label": "UTAS Motorsport",
+          "text": "在 CARLA、ROS 2 和 RViz 里跑通的一整条链路：虚拟 40 线激光雷达、DBSCAN 锥桶检测、多帧跟踪、KISS-ICP 定位、中心路径生成和路径跟随。"
+        },
+        {
+          "label": "Hesai Pandar40P",
+          "text": "禾赛官方 ROS 2 驱动，为仿真之后的硬件测试准备。"
+        },
+        {
+          "label": "AI Town",
+          "text": "基于 Django 的多智能体仿真，围绕观察、记忆和规划构建，而不是写死的行为脚本。"
+        }
+      ]
+    }
+  ]
+}

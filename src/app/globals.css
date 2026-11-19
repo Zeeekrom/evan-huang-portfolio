@@ -1,0 +1,2558 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens reverse-engineered from the reference site (the design spec §2).
+ *
+ * Copy the system, not the identity: the palette, the type grammar and the
+ * reveal mechanics are borrowed; every word on the page is Evan's own.
+ *
+ * Two things carry most of the character:
+ *   - the base pair is #F4F4F5 / #111113, not #FFF / #000. Warm, not clinical.
+ *   - every hue has a fill value and a darker text value. The darker one is
+ *     the only one that passes AA on the page background, so writing with the
+ *     fill colour is always a mistake.
+ */
+
+:root {
+  /* base (§2.1) */
+  --bg: #f4f4f5;
+  --bg2: #e9e9ec;
+  --plate-white: #ffffff;
+  --ink: #111113;
+  --ink2: #5b5b62;
+  --rule: #d8d8dd;
+  --rule-strong: #8b8b90;
+  --invert: #111113;
+  --on-invert: #f2f2f4;
+  --glass: rgba(255, 255, 255, 0.92);
+  --nav-bg: rgba(244, 244, 245, 0.92);
+  --tint-soft: rgba(0, 0, 0, 0.05);
+  --scrim-dark: rgba(0, 0, 0, 0.28);
+
+  /* six hues, four variants each (§2.2) */
+  --c1-fill: #e8a317;  --c1-text: #8a6210;  --c1-line: #a77510;  --c1-on: #241700;
+  --c2-fill: #c3384b;  --c2-text: #ab3142;  --c2-line: #c3384b;  --c2-on: #ffffff;
+  --c3-fill: #2c7a63;  --c3-text: #266b57;  --c3-line: #2c7a63;  --c3-on: #ffffff;
+  --c4-fill: #1f4b8f;  --c4-text: #1f4b8f;  --c4-line: #1f4b8f;  --c4-on: #ffffff;
+  --c5-fill: #6d4aa8;  --c5-text: #6d4aa8;  --c5-line: #6d4aa8;  --c5-on: #ffffff;
+  --c6-fill: #9e227d;  --c6-text: #9e227d;  --c6-line: #9e227d;  --c6-on: #ffffff;
+  --c7-line: #14432f;
+  --c8-line: #3f4a5a;
+
+  --accent-text: #ab3142;
+  --accent-on-invert: #cf5f6f;
+  --gold-on-invert: #e8a317;
+
+  /* the rotating word in the opening statement (§5.1) */
+  --swap-1: var(--c4-text);
+  --swap-2: var(--c5-text);
+  --swap-3: var(--c3-text);
+  --swap-4: var(--c2-text);
+
+  /* zero webfonts (§2.3): the first paint is already the final one */
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "SF Mono", Menlo, ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  /* spacing, radius, shadow, motion (§2.4) — deliberately few steps */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.85rem;
+  --spacing-lg: 1.15rem;
+  --spacing-xl: 1.8rem;
+  --spacing-2xl: 2.8rem;
+  --r: 10px;
+  --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 14px rgba(0, 0, 0, 0.1);
+  --shadow-3: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --transition-fast: 0.12s ease;
+  --transition-base: 0.2s ease;
+}
+
+/*
+ * The old token names are kept and repointed rather than deleted: every
+ * section component still asks for bg-background / text-muted / border-border,
+ * so remapping here recolours the whole page in one move.
+ */
+@theme inline {
+  --color-background: var(--bg);
+  --color-background-elevated: var(--bg2);
+  --color-surface: var(--plate-white);
+  --color-surface-hover: var(--bg2);
+  --color-border: var(--rule);
+  --color-foreground: var(--ink);
+  --color-muted: var(--ink2);
+  --color-accent: var(--accent-text);
+  --color-accent-teal: var(--c3-text);
+  --color-accent-violet: var(--c5-text);
+  --color-accent-blue: var(--c4-text);
+  --color-plate: var(--plate-white);
+  --color-rule-strong: var(--rule-strong);
+  --font-sans: var(--sans);
+  --font-mono: var(--mono);
+  --radius-plate: var(--r);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/*
+ * Type grammar (§2.3), the single highest-recognition move on the reference
+ * site: heavy weight pulled tight against a monospace label pushed wide. One
+ * contracts, the other expands; setting them next to each other is the look.
+ */
+.h-xl {
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+}
+
+.h-lg {
+  font-weight: 800;
+  letter-spacing: -0.022em;
+  line-height: 1.08;
+}
+
+.h-md {
+  font-weight: 800;
+  letter-spacing: -0.012em;
+}
+
+.label {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink2);
+}
+
+.note {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--ink2);
+}
+
+/* A plate is the only raised surface on the page. */
+.plate {
+  background: var(--plate-white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-1);
+}
+
+.rule-line {
+  height: 1px;
+  background: var(--rule);
+}
+
+/*
+ * The rotating word (§5.1). All four words live in the DOM; only .live is
+ * shown, and aria-hidden is switched with it so a screen reader hears the
+ * sentence that is on screen rather than all four endings at once.
+ */
+.swap {
+  display: inline-grid;
+  /* Words share a left edge, so the crossfade reads as one word changing. */
+  justify-items: start;
+}
+
+/*
+ * Measured from the reference: the word that leaves drops 9.6px and tilts
+ * 2.5 degrees as it fades, over 0.4s, and the colour travels with it. A plain
+ * opacity fade reads as two words sitting on top of each other; the tilt is
+ * what makes it read as one word being replaced.
+ */
+.swap > b {
+  grid-area: 1 / 1;
+  font-weight: 800;
+  opacity: 0;
+  transform: rotate(-2.5deg) translateY(9.6px);
+  transition: opacity 0.4s ease, transform 0.4s ease, color 0.4s ease;
+}
+
+.swap > b.live {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swap > b {
+    transform: none;
+    transition: none;
+  }
+}
+
+.swap > b:nth-child(1) { color: var(--swap-1); }
+.swap > b:nth-child(2) { color: var(--swap-2); }
+.swap > b:nth-child(3) { color: var(--swap-3); }
+.swap > b:nth-child(4) { color: var(--swap-4); }
+
+/*
+ * Scroll reveal (§5.2). A section enters the viewport, picks up .on, and the
+ * .rv elements inside it rise in staggered steps. Pure CSS: no animation
+ * library, and nothing animates at all under reduced motion.
+ */
+.rv {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.on .rv {
+  opacity: 1;
+  transform: none;
+}
+
+.d1 { transition-delay: 0.04s; }
+.d2 { transition-delay: 0.1s; }
+.d3 { transition-delay: 0.16s; }
+.d4 { transition-delay: 0.22s; }
+.d5 { transition-delay: 0.28s; }
+.d6 { transition-delay: 0.34s; }
+
+/* Evidence is a first-class element on the reference site (.ev, §5.3). */
+.ev {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink2);
+}
+
+.exp-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.53rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2.88px 7.2px;
+  border: 1px solid var(--line, var(--rule-strong));
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--line, var(--rule-strong)) 22%, transparent);
+  color: var(--ink);
+}
+
+/* Classes the older sections still use, restated in the new system. */
+.section-heading {
+  font-family: var(--mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--ink2);
+}
+
+.card {
+  background: var(--plate-white);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-1);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--rule-strong);
+  box-shadow: var(--shadow-2);
+}
+
+.chip {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+  border: 1px solid var(--rule);
+  color: var(--ink2);
+  background: var(--bg2);
+}
+
+.gradient-text {
+  color: var(--ink);
+}
+
+.glow-outline {
+  color: var(--ink);
+}
+
+.bg-grid {
+  background-image: none;
+}
+
+.animate-blob {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
+  .rv {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .swap > b {
+    transition: none;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+  .plate,
+  .card {
+    box-shadow: none;
+  }
+}
+
+/*
+ * Page shell, measured from the reference (the measured spec §1).
+ * Content is not a narrow centred column: it fills up to 1400px and keeps a
+ * 51.2px gutter. That width is most of why the reference reads as a publication
+ * rather than a CV.
+ */
+.pad {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3.2rem);
+}
+
+.hero.pad {
+  padding-top: clamp(2.4rem, 6vw, 4.8rem);
+  padding-bottom: 2.2rem;
+}
+
+.sec.pad {
+  padding-top: clamp(2.6rem, 5.5vw, 4.4rem);
+  padding-bottom: 0.8rem;
+}
+
+/* The split plate: 2px of solid ink and no shadow at all (§2). */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1.105fr 1fr;
+  min-height: 368px;
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--plate-white);
+}
+
+.hero-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.15rem;
+  padding: clamp(1.35rem, 2.4vw, 1.9rem);
+}
+
+/* 49.6px at 1280, 35.1px at 900, tracking constant at -0.045em (§3, §4). */
+.big {
+  font-size: clamp(2.19rem, 0.05rem + 3.8vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+}
+
+.arc {
+  font-size: clamp(0.8rem, 1.24vw, 0.992rem);
+  line-height: 1.45;
+}
+
+.arc b {
+  font-weight: 700;
+}
+
+.arw {
+  color: var(--ink2);
+}
+
+/*
+ * The line that says what this translation does not carry.
+ *
+ * It sits between the opening plate and About, in the page's own voice rather
+ * than as a banner: the Chinese page is the same page, and the one thing it
+ * cannot offer — a guide whose catalogue is scraped from the English canvas —
+ * is worth one sentence and no more. Empty in English, so nothing renders.
+ */
+.site-notice {
+  margin-top: 1.7rem;
+  padding-left: 0.95rem;
+  border-left: 2px solid var(--c2-line);
+  font-size: 0.84rem;
+  line-height: 1.85;
+  color: var(--ink2);
+  max-width: 44rem;
+}
+
+.scope {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: clamp(0.647rem, 0.925vw, 0.74rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.7;
+  color: var(--ink2);
+  max-width: 28rem;
+}
+
+.hero-shot {
+  position: relative;
+  min-height: 220px;
+  background: var(--invert);
+  color: var(--on-invert);
+}
+
+.hero-shot img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-shot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent 42%);
+}
+
+.shot-caption {
+  position: absolute;
+  z-index: 1;
+  color: #ffffff;
+  left: 1.15rem;
+  bottom: 1.15rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.shot-caption small {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.56rem;
+  letter-spacing: 0.08em;
+  opacity: 0.72;
+}
+
+.shot-caption a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Every section opens the same way: title left, one line of aside right, rule. */
+.sec-h {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.sec-h h2 {
+  font-size: clamp(1.6rem, 2.56vw, 2.05rem);
+  font-weight: 800;
+  letter-spacing: -0.033em;
+  line-height: 1.5;
+}
+
+.sec-h .aside {
+  font-size: 0.76rem;
+  color: var(--ink2);
+  text-align: right;
+}
+
+/*
+ * The marks under the claim in About, in colour.
+ *
+ * The plate is the whole trick. Colour was the brief, and colour is what no
+ * single page background suits: Lilith and Libraries Tasmania set their names
+ * in near-black and Perfect World ships a white wordmark, so one of them
+ * disappears whichever way the theme goes. A plate that stays light in both
+ * themes is a lift you barely see on the paper and a card on the dark, and
+ * every mark on it is legible as published.
+ *
+ * Sizes are per logo, not one box. A leaf stacked over a name, a wide
+ * two-line wordmark and a single-line wordmark do not share an optical weight
+ * at a shared height, so each is tuned until the row reads evenly.
+ */
+.lg-plate {
+  margin-top: 1.7rem;
+  padding: 1rem 1.15rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(17, 17, 19, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.lg-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lg {
+  display: block;
+}
+
+.lg a,
+.lg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.lg img {
+  object-fit: contain;
+  object-position: left center;
+}
+
+.lg a {
+  opacity: 0.88;
+  transition: opacity 0.18s ease;
+}
+
+.lg a:hover,
+.lg a:focus-visible {
+  opacity: 1;
+}
+
+.lg-aia-institute {
+  width: 141px;
+  height: 16px;
+}
+
+.lg-strategy-and-ops {
+  width: 57px;
+  height: 36px;
+}
+
+.lg-tencent {
+  width: 84px;
+  height: 16px;
+}
+
+.lg-perfect-world {
+  width: 62px;
+  height: 22px;
+}
+
+.lg-lilith-games {
+  width: 72px;
+  height: 24px;
+}
+
+.lg-libraries-tasmania {
+  width: 70px;
+  height: 28px;
+}
+
+.lg-tasmanian-health {
+  width: 93px;
+  height: 20px;
+}
+
+.lg-mothers-day-classic {
+  width: 58px;
+  height: 32px;
+}
+
+.lg-raise {
+  width: 70px;
+  height: 22px;
+}
+
+.lg-utas {
+  width: 105px;
+  height: 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lg a {
+    transition: none;
+  }
+}
+
+/*
+ * A block heading inside a section: the same line as .sec-h without the rule,
+ * because it names a block rather than opening a section.
+ *
+ * Its own size step matters. Set in the mono capitals of .label it read as a
+ * field name and the block under it looked orphaned; set at the h2's size it
+ * would claim to be a section of its own. Between the two, it reads as what it
+ * is — the second half of one section.
+ */
+.sub-h {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.sub-h .subhead {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+}
+
+.sub-h .aside {
+  font-size: 0.76rem;
+  color: var(--ink2);
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+  }
+  .hero-shot {
+    min-height: 160px;
+  }
+}
+
+/*
+ * About (measured §8): a claim and a portrait on the left, the paragraphs on
+ * the right at 0.87 : 1 with a 48px gutter. The first paragraph is set one
+ * step larger and in full ink; the rest drop to the muted tone, so the eye is
+ * told where to start.
+ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.87fr 1fr;
+  gap: 3rem;
+}
+
+.about-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+}
+
+.about-photo {
+  width: 104px;
+  height: 104px;
+  display: grid;
+  place-content: center;
+  object-fit: cover;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--bg2);
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.about-lead {
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.032em;
+  line-height: 1.1;
+}
+
+.about-body {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.about-body p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--ink2);
+}
+
+.about-body p:first-child {
+  font-size: 1.02rem;
+  color: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/*
+ * Strengths (measured §9): one row of area cards over a bordered evidence
+ * panel. Only the first card is filled — the colour budget is spent once, and
+ * the rest of the row is held together by 2px rules in the other hues.
+ */
+.spine {
+  font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+  line-height: 1.5;
+  color: var(--ink2);
+  max-width: 52rem;
+}
+
+.spec-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.spec {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 3.2px;
+  padding: 13.6px 14.4px;
+  border: 2px solid var(--line, var(--rule-strong));
+  border-radius: var(--r);
+  background: var(--bg);
+}
+
+.spec-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: -0.01em;
+}
+
+.spec-sub {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink2);
+}
+
+.spec-stage {
+  padding: 24px;
+  background: var(--bg2);
+  border: 2px solid var(--c1-line);
+  border-radius: var(--r);
+}
+
+.stage-lead {
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.1rem;
+}
+
+.ev-row {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 1.2rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.ev-row:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.ev-row dt {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c2-text);
+}
+
+.ev-row dd {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--ink2);
+}
+
+.ev-link {
+  margin-left: 0.4rem;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  box-shadow: inset 0 -0.42em 0 rgba(232, 163, 23, 0.6);
+  white-space: nowrap;
+}
+
+.ev-link:hover {
+  box-shadow: inset 0 -0.42em 0 var(--c1-fill);
+}
+
+@media (max-width: 760px) {
+  .ev-row {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+}
+
+/*
+ * Building (measured §10): a filter row of monospace pills over a grid of
+ * cards whose headers carry the colour.
+ *
+ * The original's cards flip to a screenshot on the back. There are no
+ * screenshots of this work, and inventing them would be the one dishonest
+ * thing on the page, so the card stays on its front and gives the space to
+ * what the project actually did.
+ */
+.bfilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6.4px;
+}
+
+.bf {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  padding: 6.72px 12.8px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 99px;
+  color: var(--ink);
+  background: transparent;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.bf[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-invert);
+}
+
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+  gap: 9.6px;
+}
+
+/*
+ * The card turns over, with the original's own easing
+ * (transform .55s cubic-bezier(.3, 1.4, .4, 1)). Both faces are stacked and
+ * back-face hidden, so the card needs a fixed height rather than growing to
+ * its tallest side.
+ */
+.pcard {
+  height: 330px;
+  perspective: 1000px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  text-align: left;
+}
+
+.pc-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.3, 1.4, 0.4, 1);
+}
+
+.pcard.is-flipped .pc-inner {
+  transform: rotateY(180deg);
+}
+
+.pc-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--bg);
+  backface-visibility: hidden;
+  transition: border-color var(--transition-base);
+}
+
+.pcard:hover .pc-face {
+  border-color: var(--rule-strong);
+}
+
+.pc-back {
+  transform: rotateY(180deg);
+  padding-top: 13.6px;
+  overflow: hidden;
+}
+
+/*
+ * The screenshot takes the space the original gives it (§10): roughly the
+ * lower two thirds of the card. Every one of these is Evan's own capture
+ * from his own repository — which is why there is a picture here at all.
+ */
+.pc-shot {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-top: 1px solid var(--rule);
+  background: var(--bg2);
+}
+
+.pc-links {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.pc-hint.is-live {
+  background: var(--c3-fill);
+}
+
+.pc-tags {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-inner {
+    transition: none;
+  }
+}
+
+.pc-head {
+  display: grid;
+  gap: 0.3rem;
+  padding: 11.2px 14.4px;
+  color: #ffffff;
+}
+
+.pc-head .k {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.55rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.pc-head h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.024em;
+  line-height: 1.15;
+}
+
+.pc-body {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  padding: 13.6px 14.4px;
+  overflow: hidden;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--ink2);
+}
+
+.pc-foot {
+  margin-top: auto;
+  padding: 0 14.4px 14.4px;
+}
+
+.pc-hint {
+  display: inline-block;
+  padding: 2.88px 8px;
+  border-radius: 99px;
+  background: var(--ink);
+  color: var(--on-invert);
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/*
+ * Record (measured §11): one expandable row per role —
+ * employer and badge | role and metric | dates | marker.
+ *
+ * The badge is the point. Tencent, Perfect World and Lilith Games are
+ * household names in one country and unknown in this one; a reader in Hobart
+ * needs to be told who they are, in the row, without having to search.
+ */
+.rrow-list {
+  border-top: 1px solid var(--rule);
+}
+
+.rrow-wrap {
+  border-bottom: 1px solid var(--rule);
+}
+
+.rrow {
+  display: grid;
+  grid-template-columns: 180px 1fr 118px 18px;
+  gap: 16px;
+  align-items: start;
+  padding: 13.6px 8px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.rrow::-webkit-details-marker {
+  display: none;
+}
+
+.rrow-wrap:hover .rrow {
+  background: var(--tint-soft);
+}
+
+.exp-co {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.rrow-role {
+  font-size: clamp(1.05rem, 1.6vw, 1.28rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.rrow-metric {
+  display: block;
+  margin-top: 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.045em;
+  line-height: 1.5;
+  color: var(--ink2);
+}
+
+.rrow-time {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  line-height: 1.35;
+  color: var(--ink2);
+}
+
+.rrow-time small {
+  display: block;
+  font-size: 0.58rem;
+  opacity: 0.8;
+}
+
+.rrow-arw {
+  justify-self: end;
+  font-family: var(--mono);
+  color: var(--ink2);
+  transition: transform var(--transition-base);
+}
+
+.rrow-wrap[open] .rrow-arw {
+  transform: rotate(45deg);
+}
+
+.rrow-detail {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0 8px 1rem 204px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink2);
+}
+
+@media (max-width: 860px) {
+  .rrow {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .rrow-detail {
+    padding-left: 8px;
+  }
+}
+
+/* Connect: an invitation, not a label, and three links that do something. */
+.connect-band {
+  background: var(--invert);
+  color: var(--on-invert);
+  padding: clamp(2.2rem, 5vw, 3.6rem) 0;
+}
+
+.connect-band .connect-h em {
+  font-style: normal;
+  color: var(--c1-fill);
+}
+
+.connect-h {
+  font-size: clamp(1.8rem, 4.2vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.connect-p {
+  margin-top: 0.9rem;
+  max-width: 38rem;
+  color: rgba(242, 242, 244, 0.72);
+  line-height: 1.6;
+}
+
+.connect-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.6rem;
+}
+
+.lk {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.lk:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+
+.lk.is-paper {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+/* Values: three columns, each one numbered. */
+.values-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+}
+
+.value-n {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--accent-text);
+}
+
+.value-h {
+  margin: 0.45rem 0 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.value-p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--ink2);
+}
+
+/* Offsite: the closing list, marked rather than bulleted. */
+.offsite-list {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 62rem;
+}
+
+.offsite-list li {
+  display: grid;
+  grid-template-columns: 8px 1fr;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink2);
+}
+
+.offsite-list li > span:first-child {
+  width: 8px;
+  height: 8px;
+  margin-top: 0.55rem;
+  border-radius: 99px;
+  background: var(--c3-fill);
+}
+
+/*
+ * Reveal. The hiding rule is scoped to .js-reveal, which only exists once the
+ * observer has mounted, so the exported HTML is readable with no JavaScript
+ * at all and the fade is an addition rather than a rescue.
+ */
+.js-reveal .sec > *,
+.js-reveal .hero > * {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.js-reveal .sec[data-reveal="on"] > *,
+.js-reveal .hero[data-reveal="on"] > * {
+  opacity: 1;
+  transform: none;
+}
+
+.js-reveal .sec[data-reveal="on"] > *:nth-child(2) { transition-delay: 0.06s; }
+.js-reveal .sec[data-reveal="on"] > *:nth-child(3) { transition-delay: 0.12s; }
+.js-reveal .sec[data-reveal="on"] > *:nth-child(4) { transition-delay: 0.18s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .sec > *,
+  .js-reveal .hero > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/*
+ * Dark mode (spec §2.5: one of the three media queries worth copying).
+ * Scoped away from [data-theme], which the canvas route owns.
+ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #111113;
+    --bg2: #1a1a1d;
+    --plate-white: #17171a;
+    --ink: #f2f2f4;
+    --ink2: #a0a0a8;
+    --rule: #2c2c31;
+    --rule-strong: #55555c;
+    --invert: #f2f2f4;
+    --on-invert: #111113;
+    --nav-bg: rgba(17, 17, 19, 0.92);
+    --tint-soft: rgba(255, 255, 255, 0.06);
+    --accent-text: #cf5f6f;
+  }
+}
+
+/*
+ * Phone. The bar grows a second line, the heading has to come down two full
+ * steps to stop breaking mid-word, and the section headers stop trying to sit
+ * a title and an aside on one line.
+ */
+@media (max-width: 640px) {
+  .hero.pad {
+    padding-top: 5.5rem;
+  }
+
+  .big {
+    font-size: clamp(1.7rem, 8.5vw, 2.19rem);
+  }
+
+  .sec-h {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .sec-h .aside {
+    text-align: left;
+  }
+
+  .sub-h {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .sub-h .aside {
+    text-align: left;
+  }
+
+  .hero-shot {
+    min-height: 120px;
+  }
+
+  .connect-h {
+    font-size: clamp(1.5rem, 8vw, 1.9rem);
+  }
+}
+
+/*
+ * The cards are tabs (measured §9a): each one swaps the panel underneath.
+ *
+ * Deviation D3: on the original, the first card stays filled whichever tab is
+ * selected, so the selected tab is visually indistinguishable from the rest —
+ * verified by clicking through them and diffing the computed styles. Here the
+ * fill follows the selection and the panel takes the selected hue, which is
+ * the same mechanic with the state actually shown.
+ */
+.spec {
+  text-align: left;
+  cursor: pointer;
+}
+
+.spec[aria-selected="true"] {
+  background: var(--line, var(--c1-fill));
+  border-color: var(--line, var(--c1-line));
+  color: #ffffff;
+}
+
+.spec[aria-selected="true"] .spec-sub {
+  color: #ffffff;
+  opacity: 0.78;
+}
+
+/* The tail: without it the panel below is just a panel, not this card's. */
+.spec[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -11px;
+  transform: translateX(-50%);
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-top: 11px solid var(--line, var(--c1-line));
+}
+
+.spec-stage {
+  border-color: var(--stage-line, var(--c1-line));
+}
+
+/* Record's two reading orders, and the line that says which one is on. */
+.exp-modes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 11.2px;
+}
+
+.seg {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 2px solid var(--ink);
+  border-radius: 99px;
+}
+
+.seg-btn {
+  padding: 6px 15px;
+  border: 0;
+  border-radius: 99px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.seg-btn[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--on-invert);
+}
+
+.pc-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+/*
+ * Building, the scatter (measured §14): the cards are not a grid. They are
+ * absolutely positioned, rotated a degree or five, stepped about 100px apart
+ * so they overlap into a pile, and draggable — cursor: grab. A TIDY button at
+ * the end of the filter row puts them back.
+ */
+.pgrid.is-scatter {
+  position: relative;
+  display: block;
+  height: 390px;
+  touch-action: pan-y;
+  /*
+   * The pile is laid out in pixels — 16 + 7 x 128 + 240 — which fits a wide
+   * desktop and hangs over the edge on anything narrower, giving the whole
+   * page a horizontal scrollbar. `clip` stops that without turning the
+   * section into a scroller, and unlike `hidden` it leaves the other axis
+   * alone, so a card dragged downwards still overlaps the rows below.
+   */
+  overflow-x: clip;
+}
+
+.pgrid.is-scatter .pcard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px;
+  cursor: grab;
+}
+
+.pgrid.is-scatter .pcard:active {
+  cursor: grabbing;
+}
+
+.pgrid.is-scatter .pcard.is-dragging .pc-inner {
+  transition: none;
+}
+
+.tidy {
+  margin-left: auto;
+}
+
+.bfilter .hint {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  align-self: center;
+}
+
+/*
+ * Values, the dark band (measured §15). A marquee of the three claims at
+ * 47px/800 with coloured dots between them, then the three columns under it
+ * with rules between. This is the only full-bleed black on the page and the
+ * loudest thing on it, which is the point: values are the part a reader is
+ * least likely to go looking for.
+ */
+.vband {
+  background: var(--invert);
+  color: var(--on-invert);
+  margin-top: 2rem;
+}
+
+.vband-marquee {
+  overflow: hidden;
+  padding: 1.7rem 0;
+  border-bottom: 1px solid rgba(242, 242, 244, 0.12);
+}
+
+.vm-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4rem;
+  white-space: nowrap;
+  font-size: clamp(2.1rem, 4.6vw, 3.6rem);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  animation: vmslide 46s linear infinite;
+  will-change: transform;
+}
+
+.vm-track i {
+  font-size: 0.6em;
+  font-style: normal;
+}
+
+.vm-track i:nth-of-type(3n + 1) { color: #6e93cc; }
+.vm-track i:nth-of-type(3n + 2) { color: #3fa588; }
+.vm-track i:nth-of-type(3n + 3) { color: var(--c1-fill); }
+
+@keyframes vmslide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.vcols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.vcol {
+  padding: 1.9rem clamp(1.25rem, 4vw, 3.2rem);
+  border-left: 1px solid rgba(242, 242, 244, 0.12);
+}
+
+.vcol:first-child {
+  border-left: 0;
+}
+
+.vcol-n {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.vcol h3 {
+  margin: 0.6rem 0 0.55rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.vcol p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(242, 242, 244, 0.68);
+}
+
+/* The marquee holds still for anyone who asked for less movement. */
+@media (prefers-reduced-motion: reduce) {
+  .vm-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .pgrid.is-scatter {
+    display: grid;
+    height: auto;
+  }
+  .pgrid.is-scatter .pcard {
+    position: static;
+    width: auto;
+    transform: none !important;
+    cursor: pointer;
+  }
+}
+
+/* Case studies: three stills that open the films they were cut from. */
+.case-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.1rem;
+}
+
+.lk-case {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  background: var(--plate-white);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.lk-case:hover {
+  border-color: var(--rule-strong);
+  box-shadow: var(--shadow-2);
+}
+
+.lk-case img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--rule);
+}
+
+.lk-case-body {
+  padding: 14.4px;
+}
+
+.lk-case-body .k {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+
+.lk-case-body h3 {
+  margin: 0.45rem 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.lk-case-body p {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--ink2);
+}
+
+.arw-ne {
+  font-size: 0.8em;
+}
+
+/*
+ * The corner guide (measured §16: 60px, 24px from each edge). The reference
+ * opens a panel in place; a link that throws the visitor onto another page
+ * reads as a different site, which is exactly what it did here before.
+ */
+.fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 70;
+  display: grid;
+  place-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(242, 242, 244, 0.25);
+  background: var(--invert);
+  color: var(--on-invert);
+  box-shadow: var(--shadow-3);
+  cursor: pointer;
+  transition: transform var(--transition-base);
+}
+
+.fab:hover {
+  transform: translateY(-2px);
+}
+
+.fab-wave {
+  width: 30px;
+  height: 14px;
+  color: var(--c1-fill);
+}
+
+.fab-x {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.guide-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 96px;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  width: min(360px, calc(100vw - 48px));
+  max-height: min(560px, calc(100vh - 140px));
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  background: var(--plate-white);
+  box-shadow: var(--shadow-3);
+}
+
+.guide-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1rem;
+  background: var(--invert);
+  color: var(--on-invert);
+}
+
+.guide-head img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.guide-head strong {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.guide-head .k {
+  display: block;
+  margin-top: 0.1rem;
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.guide-body {
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.guide-bubble {
+  padding: 0.75rem 0.85rem;
+  border-radius: 10px;
+  background: var(--bg2);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.guide-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.guide-chips button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--ink);
+  border-radius: 99px;
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.guide-chips button:hover {
+  background: var(--ink);
+  color: var(--on-invert);
+}
+
+.guide-note {
+  margin-top: 0.9rem;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  color: var(--ink2);
+}
+
+.guide-note a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.guide-ask {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+.guide-ask input {
+  flex: 1;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid var(--rule);
+  border-radius: 8px;
+  font-size: 0.84rem;
+  background: var(--bg);
+  color: var(--ink2);
+}
+
+.guide-ask button {
+  width: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--c1-fill);
+  color: var(--c1-on);
+  font-size: 0.9rem;
+}
+
+.guide-ask input:disabled,
+.guide-ask button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/*
+ * Canvas / semantic-deck handoff.
+ *
+ * Three states, driven by data-canvas on the root element:
+ *
+ *   (absent)  no JavaScript, or the canvas failed. The deck is the page.
+ *   "on"      a boot script has confirmed JS is running. The deck is hidden
+ *             before first paint and the loader covers the build.
+ *   "ready"   the canvas is live. The loader fades out over it.
+ *
+ * The deck is never removed from the DOM — crawlers, screen readers and no-JS
+ * visitors read exactly the markup in the exported HTML.
+ */
+[data-canvas] [data-deck] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  pointer-events: none;
+}
+
+/*
+ * Loader. Hidden by default so that with JavaScript off it can never trap the
+ * page behind a screen that will not go away. Its background matches the world
+ * surface, so the handoff to the canvas is a fade with nothing underneath it
+ * changing colour.
+ */
+#explore-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-content: center;
+  gap: 1.25rem;
+  visibility: hidden;
+  opacity: 0;
+  background: var(--canvas-surface, #3a3a3a);
+  color: var(--ui-text, #fff);
+}
+
+[data-canvas="on"] #explore-loader {
+  visibility: visible;
+  opacity: 1;
+}
+
+[data-canvas="ready"] #explore-loader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.45s ease,
+    visibility 0s linear 0.45s;
+}
+
+#explore-loader .loader-name {
+  font-size: 0.8125rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.75;
+}
+
+#explore-loader .loader-track {
+  width: min(15rem, 60vw);
+  height: 1px;
+  background: currentColor;
+  opacity: 0.25;
+}
+
+#explore-loader .loader-fill {
+  height: 100%;
+  width: 0%;
+  background: currentColor;
+  opacity: 1;
+  transition: width 0.18s linear;
+}
+
+#explore-loader .loader-count {
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-align: center;
+  opacity: 0.45;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-canvas="ready"] #explore-loader {
+    transition: none;
+  }
+  #explore-loader .loader-fill {
+    transition: none;
+  }
+}
+
+/*
+ * Canvas UI tokens (spec §6).
+ *
+ * The toolbar is DOM while the world is WebGL, so the two palettes have to be
+ * declared twice. These names mirror the reference implementation's so the
+ * mapping stays obvious; the values track our own surface/card decision:
+ * a grey table under near-black cards in dark, a white table under grey cards
+ * in light.
+ */
+[data-theme="dark"] {
+  --canvas-surface: #3a3a3a;
+  --ui-bg: #1e1e1ef2;
+  --ui-text: #ffffff;
+  --ui-text-muted: #a3a3a3;
+  --ui-bg-hover: #333333;
+  --ui-bg-active: #414141;
+  --ui-border: #4a4a4a;
+  --ui-selected: #ffffff1f;
+  --ui-shadow: 0 10px 40px #00000080;
+}
+
+[data-theme="light"] {
+  --canvas-surface: #ffffff;
+  --ui-bg: #ffffffe6;
+  --ui-text: #1f2937;
+  --ui-text-muted: #6b7280;
+  --ui-bg-hover: #f3f4f6;
+  --ui-bg-active: #e5e7eb;
+  --ui-border: #d1d5db;
+  --ui-selected: #00000014;
+  --ui-shadow: 0 10px 40px #0000001f;
+}
+
+/*
+ * Level meter for the voice guide (spec §2.4). Each bar is given its own
+ * period in the component, so the meter reads as a voice rather than a
+ * metronome.
+ */
+@keyframes voiceBar {
+  0% {
+    transform: scaleY(0.3);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* ------------------------------------------------------------------ 中文 */
+
+/*
+ * The language switch, in both bars.
+ *
+ * The side you are on is underlined in marigold like every other emphasised
+ * link on the site; the other side is muted until hovered. Mono, because in
+ * this bar the small capitals are the field label's register and a language
+ * name belongs in it.
+ */
+.langsw {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.langsw b {
+  color: var(--ink);
+  box-shadow: inset 0 -0.42em 0 rgba(232, 163, 23, 0.6);
+}
+
+.langsw i {
+  font-style: normal;
+  color: var(--rule-strong);
+}
+
+.langsw a {
+  color: var(--ink2);
+  transition: color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.langsw a:hover {
+  color: var(--ink);
+  box-shadow: inset 0 -0.42em 0 var(--c1-fill);
+}
+
+/* Tracking meant for small Latin capitals leaves a hole after an ideograph. */
+.langsw [lang="zh-Hans"] {
+  letter-spacing: 0;
+  font-size: 0.73rem;
+}
+
+/*
+ * Chinese does not take the English page's typography unchanged.
+ *
+ * The headline is tracked in at -0.045em and set at line-height 0.9, which is
+ * right for a Latin sentence of eight words and wrong for a run of
+ * ideographs: there are no ascenders or descenders to overlap into, so the
+ * lines collide, and negative tracking closes gaps that are structural here
+ * rather than optical. Body copy goes the other way — CJK wants more leading
+ * than Latin, not less.
+ */
+.zh .big {
+  font-size: clamp(1.7rem, 0.05rem + 2.9vw, 2.4rem);
+  letter-spacing: 0;
+  line-height: 1.32;
+}
+
+.zh .connect-h {
+  font-size: clamp(1.5rem, 3.4vw, 2.3rem);
+  letter-spacing: 0;
+  line-height: 1.36;
+}
+
+.zh .sec-h h2,
+.zh .about-lead {
+  letter-spacing: 0;
+}
+
+.zh .about-lead {
+  line-height: 1.6;
+}
+
+.zh .arc,
+.zh .scope {
+  letter-spacing: 0.02em;
+}
+
+.zh .connect-p,
+.zh .ev-row dd,
+.zh .rrow-metric {
+  line-height: 1.8;
+}
+
+/*
+ * A line of Chinese has no spaces to break at, so the browser breaks between
+ * any two characters. `strict` keeps it from starting a line on a mark that
+ * cannot open one.
+ */
+.zh p,
+.zh dd,
+.zh .rrow-metric {
+  line-break: strict;
+  overflow-wrap: break-word;
+}
+
+/* The metrics strip is one dense line of Chinese; 28rem breaks it mid-phrase. */
+.zh .scope {
+  max-width: none;
+}
+
+/*
+ * On the English page a row's second line is one short monospace phrase. Here
+ * it is a paragraph, and 0.62rem of a face with no CJK glyphs in it is both
+ * too small to read and not the face it is claiming to be — the browser has
+ * already substituted a system Chinese face behind the declaration.
+ */
+.zh .rrow-metric {
+  font-family: inherit;
+  font-size: 0.84rem;
+  letter-spacing: 0;
+  line-height: 1.8;
+}
+
+/* Tracking after the last ideograph reads as a gap rather than as spacing. */
+.zh .ev-link {
+  letter-spacing: 0;
+  font-size: 0.72rem;
+}
+
+/* ------------------------------------------------- the guide, once it answers */
+
+/* Bubbles need room between them once there is a conversation rather than one line. */
+.guide-body > .guide-bubble + .guide-bubble,
+.guide-body > .guide-said,
+.guide-body > .guide-bubble + .guide-said {
+  margin-top: 0.55rem;
+}
+
+/* The visitor's own words: the same bubble, inverted and pulled to the right. */
+.guide-said {
+  margin-left: auto;
+  max-width: 85%;
+  width: fit-content;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  background: var(--invert);
+  color: var(--on-invert);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+/*
+ * Where the answer came from — the line that makes a reply checkable.
+ * Marigold underline, the same mark every other clickable word on this page
+ * carries, because it is the same promise: this leads to the evidence.
+ */
+.guide-source {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.guide-source button,
+.guide-source a {
+  color: var(--ink);
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: inset 0 -0.42em 0 rgba(232, 163, 23, 0.6);
+  transition: box-shadow var(--transition-fast);
+}
+
+.guide-source button:hover,
+.guide-source a:hover {
+  box-shadow: inset 0 -0.42em 0 var(--c1-fill);
+}
+
+/* Three dots, offset so they read as a rhythm rather than a blink. */
+.guide-bubble.is-typing {
+  display: flex;
+  gap: 0.3rem;
+  width: fit-content;
+}
+
+.guide-bubble.is-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink2);
+  animation: guideDot 1.1s ease-in-out infinite;
+}
+
+.guide-bubble.is-typing span:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+.guide-bubble.is-typing span:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes guideDot {
+  0%, 60%, 100% { opacity: 0.25; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* The button carries the same state as the panel, so a closed panel still shows it. */
+.fab.is-thinking .fab-wave {
+  animation: fabThinking 0.9s ease-in-out infinite;
+}
+
+@keyframes fabThinking {
+  0%, 100% { transform: scaleY(0.72); opacity: 0.75; }
+  50% { transform: scaleY(1.25); opacity: 1; }
+}
+
+/*
+ * The section the guide just sent you to.
+ *
+ * A scroll alone does not say which part of a long page is the answer — the
+ * visitor arrives and has to guess what they were brought for. This names it,
+ * then gets out of the way.
+ */
+[data-guided="on"] {
+  animation: guided 1.8s ease-out;
+}
+
+@keyframes guided {
+  0%, 70% { background: rgba(232, 163, 23, 0.14); }
+  100% { background: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guide-bubble.is-typing span,
+  .fab.is-thinking .fab-wave,
+  [data-guided="on"] {
+    animation: none;
+  }
+  [data-guided="on"] {
+    outline: 2px solid var(--c1-fill);
+    outline-offset: 6px;
+  }
+}
+
+/* ------------------------------------------------- the guide, out loud */
+
+/*
+ * The voice control sits between the transcript and the question box, which
+ * is where the choice actually is: read the answers, or be told them. It is
+ * never the default — audio costs money by the second and this button is on
+ * the landing page, so nothing starts until someone presses it.
+ */
+.guide-voice {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 0.85rem;
+  border-top: 1px solid var(--rule);
+}
+
+.gv-start {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.38rem 0.7rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.gv-start svg {
+  width: 13px;
+  height: 13px;
+  color: var(--c1-fill);
+}
+
+.gv-start:hover {
+  background: var(--invert);
+  color: var(--on-invert);
+}
+
+.gv-hint {
+  font-size: 0.64rem;
+  line-height: 1.35;
+  color: var(--ink2);
+}
+
+.guide-voice.is-live {
+  justify-content: space-between;
+  background: var(--invert);
+  color: var(--on-invert);
+}
+
+.gv-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* One dot, lit while the guide is talking. A meter would be a second thing
+   to read at the moment the visitor is listening rather than looking. */
+.gv-state i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c1-fill);
+  opacity: 0.35;
+  transition: opacity var(--transition-fast);
+}
+
+.gv-state.is-speaking i {
+  opacity: 1;
+  animation: gvPulse 1.1s ease-in-out infinite;
+}
+
+@keyframes gvPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.45); }
+}
+
+.guide-voice.is-live button {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid rgba(242, 242, 244, 0.35);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: inherit;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.guide-voice.is-live button:hover {
+  background: rgba(242, 242, 244, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gv-state.is-speaking i {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------- terms */
+/*
+ * One column, measured for reading rather than for the page's usual two-up
+ * grids: the copyright page is the one place on the site where somebody is
+ * reading every word in order.
+ */
+/*
+ * The bar is fixed, and every other page opens with the hero, which carries
+ * enough of its own padding to clear it. This page opens with a section, so
+ * it is the only one that has to reserve the bar's height itself — and it
+ * never did: at the widths where the brand wraps to a second line the heading
+ * sat underneath it, in both languages.
+ *
+ * Generous rather than exact, because the bar is as tall as its own content:
+ * two lines of brand at some widths, one at others, and longer in Chinese.
+ */
+.sec.pad.terms-top {
+  padding-top: clamp(5.75rem, 9vw, 7rem);
+}
+
+.terms-body {
+  display: grid;
+  gap: 2.75rem;
+  max-width: 62ch;
+}
+.terms-block h3 {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 0.9rem;
+}
+.terms-block p + p {
+  margin-top: 0.85rem;
+}
+
+/* --------------------------------------------------- where I'm heading */
+/*
+ * Two word clouds. The box is square so the ring maths has something to work
+ * against; the words are placed absolutely from the centre, so the container
+ * needs no layout of its own.
+ */
+.ahead-grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .ahead-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+}
+.ahead-block h3 {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+.ahead-line {
+  margin-top: 0.5rem;
+  color: var(--muted, currentColor);
+  font-size: 0.9rem;
+}
+.ahead-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.75rem 1.15rem;
+  margin-top: 1.25rem;
+  /*
+   * A disc rather than a ring. The words are in normal flow, so a hard
+   * outline would be violated by whichever line happens to be longest; a
+   * soft tint reads as the same shape and cannot be broken.
+   */
+  aspect-ratio: 1 / 0.86;
+  padding: 10% 12%;
+  border-radius: 50%;
+  /*
+   * Barely there. The first value used a line colour at full strength and
+   * the disc read as a grey cloud sitting on top of the words rather than
+   * behind them.
+   */
+  background: radial-gradient(
+    circle at 50% 47%,
+    rgba(17, 17, 17, 0.055) 0%,
+    rgba(17, 17, 17, 0.028) 52%,
+    transparent 74%
+  );
+  align-content: center;
+  text-align: center;
+}
+.ahead-word {
+  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+/* The outer ring is the quietest: set it in the label face, not the display one. */
+.ahead-word.w1 {
+  font-family: var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+@media (max-width: 560px) {
+  /* The disc wastes most of a phone's width. Let it be a block. */
+  .ahead-cloud {
+    aspect-ratio: auto;
+    padding: 1.25rem 0.5rem;
+    border-radius: 18px;
+    background: none;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .ahead-word { white-space: normal; }
+}
+
+/* The flip control inherits the hint's look; it is a button now, not text. */
+.pc-flip {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.pc-flip:hover { text-decoration: underline; }
+
+/* ------------------------------------------------- the opened card (stage) */
+/*
+ * Registered so the numbers can be transitioned. Without @property a custom
+ * property is a string to the engine, the foil would jump between pointer
+ * samples, and the lit/unlit fade could not be animated at all.
+ */
+@property --px { syntax: "<number>"; inherits: true; initial-value: 0.5; }
+@property --py { syntax: "<number>"; inherits: true; initial-value: 0.5; }
+@property --lit { syntax: "<number>"; inherits: true; initial-value: 0; }
+
+.stage {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem 1rem;
+  background: rgba(10, 10, 12, 0.82);
+  backdrop-filter: blur(7px);
+}
+.stage-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+.stage-frame {
+  perspective: 1500px;
+  --rx: 0deg;
+  --ry: 0deg;
+}
+.stage-card {
+  position: relative;
+  height: min(86vh, 800px);
+  aspect-ratio: 820 / 1160;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 160ms ease-out;
+  will-change: transform;
+}
+.stage-card.is-flipped {
+  transform: rotateX(var(--rx)) rotateY(calc(var(--ry) + 180deg));
+  transition: transform var(--swing, 420ms) cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.stage-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--paper, #fff);
+  color: var(--ink, #111);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.5);
+}
+.stage-back { transform: rotateY(180deg); }
+.stage-art { width: 100%; height: 58%; object-fit: cover; flex: none; }
+.stage-art-empty { background: var(--c8-line); }
+.stage-poster { width: 100%; height: 100%; object-fit: cover; }
+.stage-text { padding: 1rem 1.15rem 1.25rem; overflow: hidden; }
+.stage-text .k {
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.68;
+}
+.stage-text h3 { margin-top: 0.35rem; font-size: 1.15rem; letter-spacing: -0.01em; }
+.stage-text p { margin-top: 0.5rem; font-size: 0.82rem; line-height: 1.45; }
+.stage-text-only { padding: 1.4rem 1.3rem; }
+.stage-text-only p + p { margin-top: 0.7rem; }
+
+/*
+ * Two layers, both driven by the same pointer position: a rainbow sheet
+ * blended so it only lights the pale parts, and a soft white highlight under
+ * the cursor. Both fade in when the pointer is over the card and out when it
+ * leaves, so a card sitting still is a photograph, not a disco.
+ */
+.stage-foil,
+.stage-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease;
+}
+/*
+ * The first version blended the rainbow with color-dodge, which is what the
+ * published implementations use — and on their art, which is dark and
+ * saturated, it is right. These cards are pale screenshots on white, and
+ * dodge over white returns white: the foil was invisible on exactly the face
+ * it had to work on. So the colour is composited normally and held back by a
+ * mask that peaks under the pointer, which reads on a light face and a dark
+ * poster alike, and still moves as the band slides.
+ */
+.stage-foil {
+  background: repeating-linear-gradient(
+    112deg,
+    rgba(255, 70, 136, 0.9) 0%,
+    rgba(255, 206, 64, 0.9) 6%,
+    rgba(64, 236, 174, 0.9) 13%,
+    rgba(86, 156, 255, 0.9) 20%,
+    rgba(188, 104, 255, 0.9) 27%,
+    rgba(255, 70, 136, 0.9) 34%
+  );
+  background-size: 260% 260%;
+  background-position: calc(var(--px) * 100%) calc(var(--py) * 100%);
+  opacity: calc(var(--lit) * 0.3);
+  -webkit-mask-image: radial-gradient(
+    circle at calc(var(--px) * 100%) calc(var(--py) * 100%),
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.55) 38%,
+    rgba(0, 0, 0, 0.12) 78%
+  );
+  mask-image: radial-gradient(
+    circle at calc(var(--px) * 100%) calc(var(--py) * 100%),
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.55) 38%,
+    rgba(0, 0, 0, 0.12) 78%
+  );
+}
+.stage-glare {
+  background: radial-gradient(
+    circle at calc(var(--px) * 100%) calc(var(--py) * 100%),
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0) 42%
+  );
+  mix-blend-mode: screen;
+  opacity: calc(var(--lit) * 0.5);
+}
+
+.stage-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.stage-bar .bf { background: rgba(255, 255, 255, 0.92); color: #111; }
+.stage-bar .bf:hover { background: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-card { transition: none; }
+  .stage-foil, .stage-glare { display: none; }
+}
+@media (max-width: 560px) {
+  .stage-card { height: min(72vh, 560px); }
+}
+
+/*
+ * A proper noun that has an official home links to it, in the same gold
+ * highlighter the publications use for "Read the paper" — but without that
+ * link's monospace capitals, which would shout a company name out of the
+ * middle of a sentence.
+ */
+.pn-link {
+  font-weight: 700;
+  color: inherit;
+  box-shadow: inset 0 -0.42em 0 rgba(232, 163, 23, 0.6);
+  transition: box-shadow var(--transition-fast);
+}
+.pn-link:hover {
+  box-shadow: inset 0 -0.42em 0 var(--c1-fill);
+}
+
+/* A screenshot standing in for a poster is letterboxed, not cropped to fill. */
+.stage-poster.is-shot { object-fit: contain; background: var(--invert); }
+
+/* Nothing on a card is a drag handle for the browser. */
+.pcard, .stage-card { user-select: none; -webkit-user-select: none; }
+.pcard img, .stage-card img { -webkit-user-drag: none; user-drag: none; }
