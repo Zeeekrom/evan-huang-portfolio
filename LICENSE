@@ -1,0 +1,38 @@
+Copyright (c) 2026 Evan Huang (Yuxiang Huang). All rights reserved.
+
+This repository is published to be read, not reused.
+
+The source code, design, written content, images, curriculum vitae and
+documents in this repository are the author's own work. They may not be
+republished, copied, adapted, redistributed or used to train a model without
+written permission. Reading the repository, linking to it and quoting from it
+for comment, criticism, review or news reporting — uses that copyright law
+already permits — are not restricted by this notice.
+
+No licence is granted to any trade name, project name or design mark used
+here.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+THIRD-PARTY MATERIAL
+--------------------
+
+The following is not the author's work and keeps its own licence. The terms
+above do not apply to it.
+
+  public/shots/hobart.jpg
+    "Hobart, kunanyi, the river and Tasman Bridge from the Rosny Lookout"
+    by jacobharrisau, via Wikimedia Commons. Cropped and resized.
+    Licensed CC BY-SA 2.0 — https://creativecommons.org/licenses/by-sa/2.0
+    https://commons.wikimedia.org/wiki/File:Hobart,_kunanyi,_the_river_and_Tasman_Bridge_from_the_Rosny_Lookout.jpg
+    Credited on the page where it appears, as the licence requires.
+
+Third-party software is used as declared dependencies and is not redistributed
+in this repository; each package keeps its own licence, recorded in
+package-lock.json and installed from npm.
